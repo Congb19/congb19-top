@@ -1,19 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './route/root';
+
 // import App from './App';
 // import * as serviceWorker from './serviceWorker';
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 // test
-function Test(props) {
-    return (
-        <div>test, {props.name}</div>
-    )
-}
-ReactDOM.render(<Test name="test!!!"/>, document.getElementById('root'));
+// function Test(props) {
+//     return (
+//         <div>test, {props.name}</div>
+//     )
+// }
+// ReactDOM.render(<Test name="test!!!"/>, document.getElementById('root'));
 
+ReactDOM.render(<App />, document.getElementById('root'));
 
 
 // If you want your app to work offline and load faster, you can change
