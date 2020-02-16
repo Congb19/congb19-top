@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 
 export default class Home extends React.Component{
     constructor(){
@@ -6,7 +7,10 @@ export default class Home extends React.Component{
     }
     render() {
         return (
-            <div>this is home.</div>
+            <div className="home">
+                <p>this is home.</p>
+                <div>this is Congb19.</div>
+            </div>
         )
     }
 }
