@@ -1,17 +1,17 @@
 import React from "react";
 import "./index.css";
 
-export default class Home extends React.Component {
+export default class About extends React.Component {
 	constructor() {
 		super();
 	}
 
 	render() {
 		return (
-			<div className="home">
-				<p>this is Congb19's Home Page.</p>
-
+			<div className="about">
 				<p>React Training Ground</p>
+				<p>About Page</p>
+				<p></p>
 			</div>
 		);
 	}

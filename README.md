@@ -1,5 +1,7 @@
 嗷 从零开始建站
 
+2020.6.29 重新起步 同时作为 react 练习场
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

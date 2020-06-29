@@ -1,0 +1,23 @@
+.sidebar {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+
+	padding: 10px;
+	border-radius: 10px;
+
+	background-color: azure;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+.btn {
+	margin: 10px;
+	background-color: bisque;
+	height: 100%;
+	width: calc(height);
+}
+.btnimg {
+	height: 100px;
+}
