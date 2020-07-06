@@ -23,6 +23,9 @@ export default class Sidebar extends React.Component {
 		};
 	}
 	mouseEnter = () => {
+		this.setState({
+			test: this.state.test + 1,
+		});
 		console.log("enter", TimeNow());
 	};
 	mouseLeave = () => {
