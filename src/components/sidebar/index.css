@@ -1,6 +1,6 @@
 .sidebar {
 	position: fixed;
-	bottom: 0;
+	bottom: -80px;
 	left: 50%;
 	transform: translateX(-50%);
 
@@ -11,6 +11,12 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
+	/* animation: myfirst 5s; */
+
+	transition: bottom 1s;
+}
+.sidebar:hover {
+	bottom: 5px;
 }
 .btn {
 	margin: 10px;
@@ -21,3 +27,11 @@
 .btnimg {
 	height: 100px;
 }
+/* @keyframes myfirst {
+	from {
+		bottom: -20px;
+	}
+	to {
+		bottom: 5px;
+	}
+} */

@@ -26,13 +26,11 @@ export default class Sidebar extends React.Component {
 		this.setState({
 			test: this.state.test + 1,
 		});
+		console.log("test: ", this.state.test);
 		console.log("enter", TimeNow());
 	};
 	mouseLeave = () => {
 		console.log("leave");
-	};
-	toLink = () => {
-		// browserHistory.push("/cv");
 	};
 	render() {
 		return (
@@ -49,7 +47,6 @@ export default class Sidebar extends React.Component {
 								className="btnimg"
 								src="./logo192.png"
 								alt="home"
-								// onClick={this.toLink}
 							></img>
 						</Link>
 					</div>
