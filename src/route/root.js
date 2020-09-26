@@ -11,7 +11,6 @@ export default class App extends React.Component {
 				<div className="main">
 					<SideBar />
 					<RouterMap />
-					{/* <SideBar /> */}
 				</div>
 			</Router>
 		);

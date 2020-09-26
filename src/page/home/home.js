@@ -1,7 +1,8 @@
 import React from "react";
-import "./index.css";
+import "./index.scss";
 
 import { CompTest } from "./../../packages";
+import { DatePicker } from "antd";
 
 export default class Home extends React.Component {
 	constructor() {
@@ -15,6 +16,7 @@ export default class Home extends React.Component {
 
 				<p>React Training Ground</p>
 				<CompTest />
+				<DatePicker />
 			</div>
 		);
 	}

@@ -11,7 +11,6 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
-	/* animation: myfirst 5s; */
 
 	transition: bottom 1s;
 }
@@ -27,11 +26,3 @@
 .btnimg {
 	height: 100px;
 }
-/* @keyframes myfirst {
-	from {
-		bottom: -20px;
-	}
-	to {
-		bottom: 5px;
-	}
-} */

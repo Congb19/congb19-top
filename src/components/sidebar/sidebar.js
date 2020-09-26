@@ -1,8 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { browserHistory } from "react-router";
-// import ReactCSSTransitionGroup from "react-transition-group";
-import "./index.css";
+import "./index.scss";
 
 function PollyTime(t) {
 	let _t = +t < 10 ? `0${t}` : t;
@@ -35,37 +33,25 @@ export default class Sidebar extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div>111 this is sidebar {this.state.test}</div>
 				<div
 					className="sidebar"
 					onMouseEnter={this.mouseEnter}
 					onMouseLeave={this.mouseLeave}
 				>
+					<div>111 this is sidebar {this.state.test}</div>
 					<div className="btn">
 						<Link to="/">
-							<img
-								className="btnimg"
-								src="./logo192.png"
-								alt="home"
-							></img>
+							<img className="btnimg" src="./logo192.png" alt="home"></img>
 						</Link>
 					</div>
 					<div className="btn">
 						<Link to="/cv">
-							<img
-								className="btnimg"
-								src="./logo192.png"
-								alt="home"
-							></img>
+							<img className="btnimg" src="./logo192.png" alt="home"></img>
 						</Link>
 					</div>
 					<div className="btn">
 						<Link to="/about">
-							<img
-								className="btnimg"
-								src="./logo192.png"
-								alt="home"
-							></img>
+							<img className="btnimg" src="./logo192.png" alt="home"></img>
 						</Link>
 					</div>
 				</div>
