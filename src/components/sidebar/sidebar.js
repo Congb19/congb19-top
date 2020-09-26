@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 import "./index.scss";
 
 function PollyTime(t) {
@@ -19,6 +21,11 @@ export default class Sidebar extends React.Component {
 			test: 1,
 			now: TimeNow(),
 		};
+	}
+	componentDidMount() {
+		axios.get("https://congb19.top").then((res) => {
+			console.log(res);
+		});
 	}
 	mouseEnter = () => {
 		this.setState({

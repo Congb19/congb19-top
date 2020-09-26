@@ -5,24 +5,25 @@ import MyLoadingComponent from "./RouterLoading";
 
 // home
 const AsyncHome = Loadable({
-	loader: () => import("../page/home"),
+	loader: () => import("../pages/home"),
 	loading: MyLoadingComponent,
 });
 //about
 const AsyncAbout = Loadable({
-	loader: () => import("../page/about"),
+	loader: () => import("../pages/about"),
 	loading: MyLoadingComponent,
 });
 //cv
 const AsyncCV = Loadable({
-	loader: () => import("../page/cv"),
+	loader: () => import("../pages/cv"),
 	loading: MyLoadingComponent,
 });
 //error
 const AsyncError = Loadable({
-	loader: () => import("../page/error"),
+	loader: () => import("../pages/error"),
 	loading: MyLoadingComponent,
 });
+
 export default () => {
 	return (
 		<Switch>
