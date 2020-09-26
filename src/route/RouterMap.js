@@ -5,17 +5,22 @@ import MyLoadingComponent from "./RouterLoading";
 
 // home
 const AsyncHome = Loadable({
-	loader: () => import("../page/home/home"),
+	loader: () => import("../page/home"),
 	loading: MyLoadingComponent,
 });
 //about
 const AsyncAbout = Loadable({
-	loader: () => import("../page/about/about"),
+	loader: () => import("../page/about"),
 	loading: MyLoadingComponent,
 });
 //cv
 const AsyncCV = Loadable({
-	loader: () => import("../page/cv/cv"),
+	loader: () => import("../page/cv"),
+	loading: MyLoadingComponent,
+});
+//error
+const AsyncError = Loadable({
+	loader: () => import("../page/error"),
 	loading: MyLoadingComponent,
 });
 export default () => {
@@ -25,8 +30,8 @@ export default () => {
 			{/* <Route path='/work' component={ AsyncWork }/> */}
 			<Route path="/cv" component={AsyncCV} />
 			<Route path="/about" component={AsyncAbout} />
-			{/*<Route path='/404' component={ AsyncErro }/>*/}
-			{/*<Redirect to="/404"/>*/}
+			<Route path="/404" component={AsyncError} />
+			<Redirect to="/404" />
 		</Switch>
 	);
 };
