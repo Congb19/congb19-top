@@ -23,7 +23,7 @@ export default class Sidebar extends React.Component {
 		};
 	}
 	componentDidMount() {
-		axios.get("https://congb19.top").then((res) => {
+		axios.get("http://120.55.54.121/api/test").then((res) => {
 			console.log(res);
 		});
 	}
@@ -48,7 +48,7 @@ export default class Sidebar extends React.Component {
 					<div>111 this is sidebar {this.state.test}</div>
 					<div className="btn">
 						<Link to="/">
-							<img className="btnimg" src="./logo192.png" alt="home"></img>
+							<img className="btnimg" src={"../assets/imgs/logo192.png"} alt="home"></img>
 						</Link>
 					</div>
 					<div className="btn">
