@@ -1,28 +1,20 @@
-.sidebar {
-	position: fixed;
-	bottom: -80px;
-	left: 50%;
-	transform: translateX(-50%);
-
-	padding: 10px;
-	border-radius: 10px;
-
-	background-color: azure;
-	display: flex;
-	align-items: flex-start;
-	justify-content: center;
-
-	transition: bottom 1s;
-}
-.sidebar:hover {
-	bottom: 5px;
-}
-.btn {
-	margin: 10px;
-	background-color: bisque;
-	height: 100%;
-	width: calc(height);
-}
-.btnimg {
-	height: 100px;
+.cb-sidebar {
+	position: absolute;
+	right: 0;
+	width: 400px;
+	.cb-sidebar__date {
+	}
+	.cb-sidebar__box {
+		margin: 20px;
+		border-radius: 20px;
+		background: #ffffff;
+		text-align: center;
+		.cb-sidebar__box__avatar {
+		}
+		label {
+			display: block;
+			font-size: 50px;
+			color: #333333;
+		}
+	}
 }

@@ -2,63 +2,55 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import Avatar from "../../assets/imgs/logo192.png";
+
 import "./index.scss";
 
-function PollyTime(t) {
-	let _t = +t < 10 ? `0${t}` : t;
-	return _t;
-}
-function TimeNow() {
-	const time = new Date();
-	return `${PollyTime(time.getHours())}:${PollyTime(
-		time.getMinutes()
-	)}:${PollyTime(time.getSeconds())}`;
-}
 export default class Sidebar extends React.Component {
 	constructor() {
 		super();
 		this.state = {
 			test: 1,
-			now: TimeNow(),
+			date: "2020",
 		};
 	}
 	componentDidMount() {
-		axios.get("http://120.55.54.121/api/test").then((res) => {
+		axios.get("http://localhost:8001/api/date").then((res) => {
 			console.log(res);
+			this.setState({
+				// date: this.dateFormatter(),
+				date: res.data.data,
+			});
 		});
 	}
-	mouseEnter = () => {
-		this.setState({
-			test: this.state.test + 1,
-		});
-		console.log("test: ", this.state.test);
-		console.log("enter", TimeNow());
-	};
-	mouseLeave = () => {
-		console.log("leave");
-	};
+	dateFormatter() {
+		let time = new Date();
+		console.log(time);
+		return time.getFullYear() + " / " + time.getMonth() + " / " + time.getDay();
+	}
 	render() {
 		return (
 			<React.Fragment>
-				<div
-					className="sidebar"
-					onMouseEnter={this.mouseEnter}
-					onMouseLeave={this.mouseLeave}
-				>
-					<div>111 this is sidebar {this.state.test}</div>
-					<div className="btn">
+				<div className="cb-sidebar">
+					<div className="cb-sidebar__date">{this.state.date}</div>
+					<div className="cb-sidebar__box">
+						<img
+							className="cb-sidebar__box__avatar"
+							src={Avatar}
+							alt="Congb19"
+						/>
+						<p>Congb19's site</p>
 						<Link to="/">
-							<img className="btnimg" src={"../assets/imgs/logo192.png"} alt="home"></img>
+							<label>HOME</label>
 						</Link>
-					</div>
-					<div className="btn">
-						<Link to="/cv">
-							<img className="btnimg" src="./logo192.png" alt="home"></img>
+						<Link to="/blog">
+							<label>BLOG</label>
 						</Link>
-					</div>
-					<div className="btn">
+						<Link to="/docs">
+							<label>DOCS</label>
+						</Link>
 						<Link to="/about">
-							<img className="btnimg" src="./logo192.png" alt="home"></img>
+							<label>ABOUT</label>
 						</Link>
 					</div>
 				</div>

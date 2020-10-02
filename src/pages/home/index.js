@@ -11,10 +11,14 @@ export default class Home extends React.Component {
 
 	render() {
 		return (
-			<div className="home">
+			<div className="cb-home">
 				<p>this is Congb19's Home Page.</p>
 
 				<p>React Training Ground</p>
+				<CompTest />
+				<CompTest />
+				<CompTest />
+				<CompTest />
 				<CompTest />
 				<DatePicker />
 			</div>
