@@ -15,7 +15,7 @@ export default class Sidebar extends React.Component {
 		};
 	}
 	componentDidMount() {
-		axios.get("http://localhost:8001/api/date").then((res) => {
+		axios.get("http://47.101.42.80:8001/api/date").then((res) => {
 			console.log(res);
 			this.setState({
 				// date: this.dateFormatter(),
