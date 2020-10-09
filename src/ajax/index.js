@@ -70,13 +70,13 @@ const request = async (url, data = {}, type = "GET") => {
 	}
 };
 
-// http://47.101.42.80/api/date
+// http://47.101.42.80/api/public/getDate
 /**
  * 日期 rqDate
  * @param null
  */
 export const rqDate = async () => {
-  const res = await request(`/date`, {}, "GET");
+  const res = await request(`/public/getDate`, {}, "GET");
   let data;
   try {
     if (res.code === 200) {
