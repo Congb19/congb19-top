@@ -1,7 +1,7 @@
 import axios from "axios";
 import { message } from "antd";
 axios.defaults.baseURL = "http://47.101.42.80:8001/api";
-axios.defaults.baseURL = "http://localhost:8001/api";
+// axios.defaults.baseURL = "http://localhost:8001/api";
 
 const gainError = (status) => {
 	let errMsg = "";
