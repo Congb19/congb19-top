@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f617ded0bcd31cca392ab509e2943b88",
+    "revision": "7ba9fe846c7d878181be44afe1c91ef8",
     "url": "/congb19-top/build/index.html"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/congb19-top/build/static/css/6.1231a5ef.chunk.css"
   },
   {
-    "revision": "9ccbef4aaa51e198900b",
+    "revision": "ab2b5ee9a97bc3c9cfda",
     "url": "/congb19-top/build/static/css/main.16369bfc.chunk.css"
   },
   {
@@ -60,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/congb19-top/build/static/js/8.495e06c3.chunk.js"
   },
   {
-    "revision": "9ccbef4aaa51e198900b",
-    "url": "/congb19-top/build/static/js/main.dc2769b1.chunk.js"
+    "revision": "ab2b5ee9a97bc3c9cfda",
+    "url": "/congb19-top/build/static/js/main.b600f5da.chunk.js"
   },
   {
     "revision": "7589ee7ae232dc583c07",

@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/congb19-top/build/static/css/main.16369bfc.chunk.css",
-    "main.js": "/congb19-top/build/static/js/main.dc2769b1.chunk.js",
-    "main.js.map": "/congb19-top/build/static/js/main.dc2769b1.chunk.js.map",
+    "main.js": "/congb19-top/build/static/js/main.b600f5da.chunk.js",
+    "main.js.map": "/congb19-top/build/static/js/main.b600f5da.chunk.js.map",
     "runtime-main.js": "/congb19-top/build/static/js/runtime-main.d9376571.js",
     "runtime-main.js.map": "/congb19-top/build/static/js/runtime-main.d9376571.js.map",
     "static/css/2.220ccb42.chunk.css": "/congb19-top/build/static/css/2.220ccb42.chunk.css",
@@ -24,7 +24,7 @@
     "static/js/8.495e06c3.chunk.js": "/congb19-top/build/static/js/8.495e06c3.chunk.js",
     "static/js/8.495e06c3.chunk.js.map": "/congb19-top/build/static/js/8.495e06c3.chunk.js.map",
     "index.html": "/congb19-top/build/index.html",
-    "precache-manifest.dfc91a9285c3069217a3249d803c39c3.js": "/congb19-top/build/precache-manifest.dfc91a9285c3069217a3249d803c39c3.js",
+    "precache-manifest.5eb79a4e0614545807f4bf8e1f1c730a.js": "/congb19-top/build/precache-manifest.5eb79a4e0614545807f4bf8e1f1c730a.js",
     "service-worker.js": "/congb19-top/build/service-worker.js",
     "static/css/2.220ccb42.chunk.css.map": "/congb19-top/build/static/css/2.220ccb42.chunk.css.map",
     "static/css/4.e810b2df.chunk.css.map": "/congb19-top/build/static/css/4.e810b2df.chunk.css.map",
@@ -40,6 +40,6 @@
     "static/css/2.220ccb42.chunk.css",
     "static/js/2.2fea12dc.chunk.js",
     "static/css/main.16369bfc.chunk.css",
-    "static/js/main.dc2769b1.chunk.js"
+    "static/js/main.b600f5da.chunk.js"
   ]
 }
