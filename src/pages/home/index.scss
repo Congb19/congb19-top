@@ -2,5 +2,17 @@
 	// position: absolute;
 	// top: 0;
 	// margin-top: 700px;
+	padding-bottom: 20px;
 	background: rgba($color: #ffff00, $alpha: 0.5);
+	// font-size: 20px;
+	.cb-line {
+		width: 800px;
+		height: 2px;
+		background-color: white;
+		transform: scaleY(0.5);
+	}
+	.cb-line2 {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
 }

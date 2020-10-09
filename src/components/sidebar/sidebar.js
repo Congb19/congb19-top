@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { rqDate } from "../../ajax";
 
 import Avatar from "../../assets/imgs/logo192.png";
 
@@ -11,28 +11,31 @@ export default class Sidebar extends React.Component {
 		super();
 		this.state = {
 			test: 1,
-			date: "2020",
+			date: {
+				year: 2000,
+				month: 1,
+				date: 1,
+				day: 1,
+			},
 		};
 	}
 	componentDidMount() {
-		axios.get("http://47.101.42.80:8001/api/date").then((res) => {
-			console.log(res);
+		(async () => {
+			let res = await rqDate();
+			console.log("rqDate", res);
 			this.setState({
-				// date: this.dateFormatter(),
-				date: res.data.data,
+				date: res,
 			});
-		});
-	}
-	dateFormatter() {
-		let time = new Date();
-		console.log(time);
-		return time.getFullYear() + " / " + time.getMonth() + " / " + time.getDay();
+		})();
 	}
 	render() {
 		return (
 			<React.Fragment>
 				<div className="cb-sidebar">
-					<div className="cb-sidebar__date">{this.state.date}</div>
+					<div className="cb-sidebar__date">
+						{this.state.date.year} / {this.state.date.month} /{" "}
+						{this.state.date.date} 星期{this.state.date.day}
+					</div>
 					<div className="cb-sidebar__box">
 						<img
 							className="cb-sidebar__box__avatar"

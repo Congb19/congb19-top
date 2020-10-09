@@ -1,7 +1,4 @@
 import React from "react";
-import axios from "axios";
-
-import Logo from "../../assets/imgs/logo192.png";
 
 import "./index.scss";
 

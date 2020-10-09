@@ -34,7 +34,6 @@ const AsyncError = Loadable({
 export default () => {
 	return (
 		<React.Fragment>
-			<SideBar />
 			<Switch>
 				<Route exact path="/" component={AsyncHome} />
 				<Route path="/blog" component={AsyncBlog} />
@@ -43,6 +42,7 @@ export default () => {
 				<Route path="/404" component={AsyncError} />
 				<Redirect to="/404" />
 			</Switch>
+			<SideBar />
 		</React.Fragment>
 	);
 };

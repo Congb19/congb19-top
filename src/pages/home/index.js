@@ -21,6 +21,8 @@ export default class Home extends React.Component {
 				<CompTest />
 				<CompTest />
 				<DatePicker />
+				<div className="cb-line"></div>
+				<div className="cb-line cb-line2"></div>
 			</div>
 		);
 	}
