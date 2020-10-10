@@ -6,6 +6,9 @@ import Avatar from "../../assets/imgs/logo192.png";
 
 import "./index.scss";
 
+let baseURL = "/congb19-top/build";
+baseURL = "";
+
 export default class Sidebar extends React.Component {
 	constructor() {
 		super();
@@ -43,16 +46,16 @@ export default class Sidebar extends React.Component {
 							alt="Congb19"
 						/>
 						<p>Congb19's site</p>
-						<Link to="/">
+						<Link to={baseURL + "/"}>
 							<label>HOME</label>
 						</Link>
-						<Link to="/blog">
+						<Link to={baseURL + "/blog"}>
 							<label>BLOG</label>
 						</Link>
-						<Link to="/docs">
+						<Link to={baseURL + "/docs"}>
 							<label>DOCS</label>
 						</Link>
-						<Link to="/about">
+						<Link to={baseURL + "/about"}>
 							<label>ABOUT</label>
 						</Link>
 					</div>

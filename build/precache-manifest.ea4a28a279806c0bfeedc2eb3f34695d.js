@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e314aed4d7e800fc649b8a7183f45da5",
+    "revision": "10f0e69415ad73bdb4f137701931cce1",
     "url": "/congb19-top/build/index.html"
   },
   {
-    "revision": "a9150bdd7255ca6da808",
+    "revision": "ab601af91766e36943b1",
     "url": "/congb19-top/build/static/css/2.220ccb42.chunk.css"
   },
   {
@@ -20,16 +20,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/congb19-top/build/static/css/6.1231a5ef.chunk.css"
   },
   {
-    "revision": "fb1493fb2f026d5426d6",
-    "url": "/congb19-top/build/static/css/main.16369bfc.chunk.css"
+    "revision": "7b581b720bb40078ffb1",
+    "url": "/congb19-top/build/static/css/main.1abca096.chunk.css"
   },
   {
-    "revision": "a9150bdd7255ca6da808",
-    "url": "/congb19-top/build/static/js/2.dfa4db5b.chunk.js"
+    "revision": "ab601af91766e36943b1",
+    "url": "/congb19-top/build/static/js/2.4125b07f.chunk.js"
   },
   {
     "revision": "56729d980da09961afe8d497a21eec12",
-    "url": "/congb19-top/build/static/js/2.dfa4db5b.chunk.js.LICENSE.txt"
+    "url": "/congb19-top/build/static/js/2.4125b07f.chunk.js.LICENSE.txt"
   },
   {
     "revision": "c40dc063f4917c0fdb62",
@@ -60,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/congb19-top/build/static/js/8.495e06c3.chunk.js"
   },
   {
-    "revision": "fb1493fb2f026d5426d6",
-    "url": "/congb19-top/build/static/js/main.f5601e76.chunk.js"
+    "revision": "7b581b720bb40078ffb1",
+    "url": "/congb19-top/build/static/js/main.275b66a6.chunk.js"
   },
   {
     "revision": "b57c3f3ebfb4a63d760b",

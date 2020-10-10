@@ -1,7 +1,7 @@
 import axios from "axios";
 import { message } from "antd";
-// axios.defaults.withCredentials = true; // 跨域
-axios.defaults.baseURL = "http://47.101.42.80:8001/api";
+// axios.defaults.withCredentials = true; // 跨域带cookie
+axios.defaults.baseURL = "http://www.congb19.top/api";
 // axios.defaults.baseURL = "http://localhost:8001/api";
 
 const gainError = (status) => {
@@ -71,7 +71,7 @@ const request = async (url, data = {}, type = "GET") => {
 	}
 };
 
-// http://47.101.42.80/api/public/getDate
+// http://www.congb19.top/api/public/getDate
 /**
  * 日期 rqDate
  * @param null

@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Loadable from "react-loadable";
 import MyLoadingComponent from "./RouterLoading";
 
+import Banner from "../components/banner/banner";
 import SideBar from "../components/sidebar/sidebar";
 
 // home
@@ -32,11 +33,12 @@ const AsyncError = Loadable({
 });
 
 let baseURL = "/congb19-top/build";
-// baseURL = "";
+baseURL = "";
 
 export default () => {
 	return (
 		<React.Fragment>
+			<Banner />
 			<Switch>
 				<Route exact path={baseURL + "/"} component={AsyncHome} />
 				<Route path={baseURL + "/blog"} component={AsyncBlog} />
