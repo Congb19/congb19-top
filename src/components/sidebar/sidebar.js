@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { rqDate } from "../../ajax";
 
-import Avatar from "../../assets/imgs/logo192.png";
+import Avatar from "../../assets/imgs/avatar.jpg";
 
 import "./index.scss";
 
