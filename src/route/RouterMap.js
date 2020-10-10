@@ -31,16 +31,19 @@ const AsyncError = Loadable({
 	loading: MyLoadingComponent,
 });
 
+let baseURL = "/congb19-top/build";
+// baseURL = "";
+
 export default () => {
 	return (
 		<React.Fragment>
 			<Switch>
-				<Route exact path="/" component={AsyncHome} />
-				<Route path="/blog" component={AsyncBlog} />
-				<Route path="/cv" component={AsyncCV} />
-				<Route path="/about" component={AsyncAbout} />
-				<Route path="/404" component={AsyncError} />
-				<Redirect to="/404" />
+				<Route exact path={baseURL + "/"} component={AsyncHome} />
+				<Route path={baseURL + "/blog"} component={AsyncBlog} />
+				<Route path={baseURL + "/cv"} component={AsyncCV} />
+				<Route path={baseURL + "/about"} component={AsyncAbout} />
+				<Route path={baseURL + "/404"} component={AsyncError} />
+				<Redirect to={baseURL + "/404"} />
 			</Switch>
 			<SideBar />
 		</React.Fragment>
