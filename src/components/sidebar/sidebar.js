@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { rqDate } from "../../ajax";
+import { getDate } from "../../ajax";
 
 import Avatar from "../../assets/imgs/avatar.jpg";
 
@@ -20,11 +20,12 @@ export default class Sidebar extends React.Component {
 				date: 1,
 				day: 1,
 			},
+			trash: "",
 		};
 	}
 	componentDidMount() {
 		(async () => {
-			let res = await rqDate();
+			let res = await getDate();
 			console.log("rqDate", res);
 			this.setState({
 				date: res,

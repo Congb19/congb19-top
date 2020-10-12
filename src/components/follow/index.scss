@@ -1,0 +1,47 @@
+.cb-follow {
+	position: fixed;
+	top: 0;
+	background: rgba($color: #006600, $alpha: 0.5);
+	width: 100vw;
+	height: 100vh;
+	.cb-follow__ball {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 10vmax;
+		height: 10vmax;
+		border-radius: 50%;
+		background: blue;
+		transition: top 0.5s, left 0.5s;
+		// transform: translate(-50%, -50%);
+	}
+	.cb-follow__position {
+		position: absolute;
+		width: 15vw;
+		height: 15vw;
+		border-radius: 50%;
+		transition: background;
+		transition-duration: 0.5s;
+		z-index: 1;
+		&:hover {
+			transition-duration: 0s;
+		}
+	}
+	@for $i from 0 through 100 {
+		$x: $i % 10;
+		$y: ($i - $x) / 10;
+		$list: red, green, blue;
+		$random-color: random(length($list));
+		.cb-follow__position:nth-child(#{$i + 1}):hover ~ .cb-follow__ball {
+			top: #{$y * 10}vh;
+			left: #{$x * 10}vw;
+		}
+		.cb-follow__position:nth-child(#{$i + 1}) {
+			top: #{$y * 10}vh;
+			left: #{$x * 10}vw;
+    }
+    .cb-follow__position:nth-child(#{$i + 1}):hover{
+      background: nth($list, $random-color);
+		}
+	}
+}

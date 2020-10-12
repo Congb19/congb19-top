@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import Loadable from "react-loadable";
 import MyLoadingComponent from "./RouterLoading";
 
+import Follow from "../components/follow/follow";
 import Banner from "../components/banner/banner";
 import SideBar from "../components/sidebar/sidebar";
 
@@ -38,6 +39,7 @@ baseURL = "";
 export default () => {
 	return (
 		<React.Fragment>
+			<Follow />
 			<Banner />
 			<Switch>
 				<Route exact path={baseURL + "/"} component={AsyncHome} />

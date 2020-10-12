@@ -73,10 +73,10 @@ const request = async (url, data = {}, type = "GET") => {
 
 // http://www.congb19.top/api/public/getDate
 /**
- * 日期 rqDate
+ * 日期 getDate
  * @param null
  */
-export const rqDate = async () => {
+export const getDate = async () => {
   const res = await request(`/public/getDate`, {}, "GET");
   let data;
   try {
