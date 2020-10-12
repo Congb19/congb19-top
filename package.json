@@ -1,8 +1,8 @@
 {
   "name": "congb19-top",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
-  "homepage":"https://www.congb19.top/congb19-top/build",
+  "homepage":"http://me.congb19.top",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@testing-library/jest-dom": "^4.2.4",
