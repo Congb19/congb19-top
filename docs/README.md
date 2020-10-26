@@ -1,3 +1,5 @@
 # congb19-docs
 
-文档仓库
+congb19的个人文档仓库。
+
+由docsify驱动。
