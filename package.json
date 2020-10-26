@@ -2,7 +2,7 @@
   "name": "congb19-top",
   "version": "0.1.1",
   "private": true,
-  "homepage":"http://me.congb19.top",
+  "homepage": "http://me.congb19.top",
   "dependencies": {
     "@babel/runtime": "^7.11.2",
     "@testing-library/jest-dom": "^4.2.4",
@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "antd": "^4.6.5",
     "axios": "^0.20.0",
+    "concurrently": "^5.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loadable": "^5.5.0",
@@ -20,7 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docs": "docsify serve ./docs"
   },
   "eslintConfig": {
     "extends": "react-app"
