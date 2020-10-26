@@ -18,7 +18,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `npm run start`
 
-### 打包
+### 打包发布
 
 `npm run build`
 
@@ -26,4 +26,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 `npm run docs`
 
-文档站由 github pages 驱动，更新代码即可，无需编译。
+### 文档发布
+
+文档站由 docsify+ github pages 驱动，更新 github 代码即可，无需编译。
