@@ -1,12 +1,15 @@
 # congb19-top-server
-congb19-top的前端
 
-从零开始建站
-
-2020.6.29 重新起步 同时作为 react 练习场
-2020.9.25 同时作为 组件库练习场
+congb19-top 的前端
 
 ## 技术栈
-react, scss, docsify
+
+react, scss, docsify, 文档站由 github pages 驱动。
+
+## 地址
+
+- 本站：http://me.congb19.top
+- 博客：https://www.congb19.top
+- 文档：http://docs.congb19.top
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
