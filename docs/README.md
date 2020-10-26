@@ -2,4 +2,4 @@
 
 congb19的个人文档仓库。
 
-由docsify驱动。
+由 docsify + Github Pages 驱动。
