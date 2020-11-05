@@ -8,14 +8,14 @@
 
   - [我的文档库 Congb19-docs](/)
 
-  - 面经汇总
+  - 面试汇总
 
-    - [字节游戏一面\_2020.3](src/interviews/bytedance_1_1.md)
+    - [字节游戏一面_2020.3](src/interviews/bytedance_1_1.md)
 
-  - 个人开发笔记
+  - 开发笔记
 
-    - [Congb19-top API文档](src/develop/api.md)
+    - [Congb19-top_API文档](src/develop/api.md)
 
   - 工作
 
-    - [实习报告 内容](src/internship/internship.md)
+    - [实习报告_阔知](src/internship/internship.md)
