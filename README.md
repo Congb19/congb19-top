@@ -8,23 +8,27 @@ react, scss, docsify。
 
 ## 地址
 
-- 本站：http://me.congb19.top
-- 博客：https://www.congb19.top
-- 文档：http://docs.congb19.top
+- 本站：<http://me.congb19.top>
+- 博客：<https://www.congb19.top>
+- 文档：<http://docs.congb19.top>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### 安装依赖
+
+`yarn`
+
 ### 开始开发
 
-`npm run start`
+`yarn start`
 
 ### 打包发布
 
-`npm run build`
+`yarn build`
 
 ### 开始文档编写
 
-`npm run docs`
+`yarn docs`
 
 ### 文档发布
 
