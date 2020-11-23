@@ -2,7 +2,7 @@ import axios from "axios";
 import { message } from "antd";
 // axios.defaults.withCredentials = true; // 跨域带cookie
 axios.defaults.baseURL = "http://www.congb19.top/api";
-// axios.defaults.baseURL = "http://localhost:8001/api";
+axios.defaults.baseURL = "http://localhost:8001/api";
 
 const gainError = (status) => {
 	let errMsg = "";
@@ -71,18 +71,29 @@ const request = async (url, data = {}, type = "GET") => {
 	}
 };
 
-// http://www.congb19.top/api/public/getDate
+// /public/getDate
 /**
  * 日期 getDate
  * @param null
  */
 export const getDate = async () => {
-  const res = await request(`/public/getDate`, {}, "GET");
-  let data;
-  try {
-    if (res.code === 200) {
-      data = res["data"];
-    }
-  } catch (error) {}
-  return data;
+	const res = await request(`/public/getDate`, {}, "GET");
+	let data;
+	try {
+		if (res.code === 200) {
+			data = res["data"];
+		}
+	} catch (error) {}
+	return data;
+};
+
+export const signup = async (params) => {
+	const res = await request(`/users/signup`, params, "POST");
+	let data;
+	try {
+		if (res.code === 200) {
+			data = res["data"];
+		}
+	} catch (error) {}
+	return data;
 };

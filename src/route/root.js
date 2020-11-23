@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import RouterMap from "../route/RouterMap.js";
-
+import RouterMap from "./RouterMap.js";
 
 export default class App extends React.Component {
 	render() {
