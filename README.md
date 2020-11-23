@@ -20,7 +20,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### 开始开发
 
-`yarn start`
+`yarn dev`
 
 ### 打包发布
 
