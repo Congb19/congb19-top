@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./route/Root";
+import App from "./route/App";
 
 import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
