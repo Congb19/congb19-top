@@ -16,6 +16,8 @@
 
     - [Congb19-top_API 文档](src/develop/api.md)
 
+    - [mysql 安装、配置、使用笔记](src/develop/mysql.md)
+
   - 工作
 
     - [实习报告\_阔知](src/internship/internship_kuozhi.md)
