@@ -62,10 +62,28 @@
 
 - 前端
 
-  discuzQ，直接
+  框架：discuzQ。
 
-  框架：uni-app，vue 语法，支持发布到 h5 和小程序。建议不使用 HBuilder，自己通过 npm 进行构建，更通用一些。
+  discuzQ 前端采用了 uni-app，vue 语法，支持发布到 h5 和小程序。建议不使用 HBuilder，自己通过 npm 进行构建，更通用一些。
 
-  1. git clone `xxx.git`
+  > 本地安装：
 
-  2. 前端开发调试：https://discuz.com/docs/uniapp_hbuilderx.html#%E4%B8%8D%E4%BD%BF%E7%94%A8hbuilder%E6%9E%84%E5%BB%BA。
+  https://discuz.com/docs/uniapp_hbuilderx.html#%E4%B8%8D%E4%BD%BF%E7%94%A8hbuilder%E6%9E%84%E5%BB%BA
+
+  1. 安装 yarn。
+
+  2. `git clone xxx.git` // 等仓库建好
+
+  3. `yarn`
+
+  > 日常开发流程：
+
+  1. 切分支。命名：feature/12345-xxxxx，bugfix/54231-yyyyyyy
+
+  2. 前端开发调试。
+
+  `yarn dev:h5`
+
+  3. commit，push，pull request。
+
+  4. 带头大哥 review code，合并。
