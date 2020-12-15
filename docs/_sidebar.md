@@ -18,6 +18,8 @@
 
     - [mysql 安装、配置、使用笔记](src/develop/mysql.md)
 
+    - [精弘论坛](src/develop/jhlt.md)
+
   - 工作
 
     - [实习报告\_阔知](src/internship/internship_kuozhi.md)
