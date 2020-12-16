@@ -16,8 +16,6 @@
 
     - [Congb19-top_API 文档](src/develop/api.md)
 
-    - [VMRS-server_API 文档](https://github.com/Congb19/VMRS/blob/main/VMRS-server/README.md)
-
     - [mysql 安装、配置、使用笔记](src/develop/mysql.md)
 
     - [精弘论坛](src/develop/jhlt.md)
