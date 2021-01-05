@@ -20,6 +20,10 @@
 
     - [精弘论坛](src/develop/jhlt.md)
 
+  - 毕设
+
+    - [外文翻译](src/vmrs/translate.md)
+
   - 工作
 
     - [实习报告\_阔知](src/internship/internship_kuozhi.md)
