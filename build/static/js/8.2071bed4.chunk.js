@@ -1,2 +1,0 @@
-(this["webpackJsonpcongb19-top"]=this["webpackJsonpcongb19-top"]||[]).push([[8],{182:function(e,t,n){"use strict";n.r(t),n.d(t,"default",(function(){return i}));var r=n(7),a=n(8),c=n(9),o=n(16),u=n(0),l=n.n(u),i=function(e){Object(c.a)(n,e);var t=Object(o.a)(n);function n(){return Object(r.a)(this,n),t.call(this)}return Object(a.a)(n,[{key:"render",value:function(){return l.a.createElement("div",{className:"cb-error"},l.a.createElement("p",null,"error Page"),l.a.createElement("p",null))}}]),n}(l.a.Component)}}]);
-//# sourceMappingURL=8.2071bed4.chunk.js.map
