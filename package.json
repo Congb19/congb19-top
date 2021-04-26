@@ -7,6 +7,10 @@
 		"serve": "vite preview"
 	},
 	"dependencies": {
+		"@eva/eva.js": "^1.0.4",
+		"@eva/plugin-renderer": "^1.0.4",
+		"@eva/plugin-renderer-img": "^1.0.4",
+		"@eva/plugin-renderer-spine": "^1.0.4",
 		"vue": "^3.0.5",
 		"vue-router": "4"
 	},
