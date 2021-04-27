@@ -16,7 +16,7 @@ export default defineComponent({
 	props: {
 		msg: {
 			type: String,
-			required: true,
+			required: false,
 		},
 	},
 	setup: () => {

@@ -4,70 +4,68 @@
 </template>
 
 <script>
-import { Game, GameObject, resource } from '@eva/eva.js';
-import { RendererSystem } from '@eva/plugin-renderer';
-import { Spine, SpineSystem } from '@eva/plugin-renderer-spine';
+// import { Game, GameObject } from '@eva/eva.js';
+// import { RendererSystem } from '@eva/plugin-renderer';
+// import { Text, TextSystem } from '@eva/plugin-renderer-text';
 
-resource.addResource([
-	{
-		name: 'anim',
-		// @ts-ignore
-		type: 'SPINE',
-		src: {
-			ske: {
-				type: 'json',
-				url: './json/b5fdf74313d5ff2609ab82f6b6fd83e6.json',
-			},
-			// @ts-ignore
-			atlas: {
-				type: 'atlas',
-				url: './json/b8597f298a5d6fe47095d43ef03210d4.atlas',
-			},
-			image: {
-				type: 'png',
-				url:
-					'https://gw.alicdn.com/tfs/TB1YHC8Vxz1gK0jSZSgXXavwpXa-711-711.png',
-			},
-		},
-	},
-]);
+// const game = new Game({
+// 	systems: [
+// 		new RendererSystem({
+// 			canvas: document.querySelector('#canvas'),
+// 			width: 750,
+// 			height: 1000,
+// 		}),
+// 		new TextSystem(),
+// 	],
+// });
 
-const game = new Game({
-	systems: [
-		new RendererSystem({
-			canvas: document.querySelector('#canvas'),
-			width: 750,
-			height: 1000,
-		}),
-		new SpineSystem(),
-	],
-	autoStart: true,
-	frameRate: 60,
-});
+// // 此处还在考虑如何设置默认场景的宽高
+// game.scene.transform.size = {
+// 	width: 750,
+// 	height: 1000,
+// };
 
-// 此处还在考虑如何设置默认场景的宽高
-game.scene.transform.size = {
-	width: 750,
-	height: 1000,
-};
+// const text = new GameObject('text', {
+// 	position: {
+// 		x: 0,
+// 		y: 0,
+// 	},
+// 	origin: {
+// 		x: 0.5,
+// 		y: 0.5,
+// 	},
+// 	anchor: {
+// 		x: 0.5,
+// 		y: 0.5,
+// 	},
+// });
 
-const gameObject = new GameObject('spine', {
-	anchor: {
-		x: 0.5,
-		y: 0.5,
-	},
-	scale: {
-		x: 0.5,
-		y: 0.5,
-	},
-});
-const spine = new Spine({ resource: 'anim', animationName: 'idle' });
-gameObject.addComponent(spine);
-spine.on('complete', (e) => {
-	console.log('动画播放结束', e.name);
-});
-spine.play('idle');
-game.scene.addChild(gameObject);
+// text.addComponent(
+// 	new Text({
+// 		text: '欢迎使用EVA互动游戏开发体系！',
+// 		style: {
+// 			fontFamily: 'Arial',
+// 			fontSize: 36,
+// 			fontStyle: 'italic',
+// 			fontWeight: 'bold',
+// 			fill: ['#b35d9e', '#84c35f', '#ebe44f'], // gradient
+// 			fillGradientType: 1,
+// 			fillGradientStops: [0.1, 0.4],
+// 			stroke: '#4a1850',
+// 			strokeThickness: 5,
+// 			dropShadow: true,
+// 			dropShadowColor: '#000000',
+// 			dropShadowBlur: 4,
+// 			dropShadowAngle: Math.PI / 6,
+// 			dropShadowDistance: 6,
+// 			wordWrap: true,
+// 			wordWrapWidth: 400,
+// 			breakWords: true,
+// 		},
+// 	})
+// );
+
+// game.scene.addChild(text);
 
 export default {};
 </script>
