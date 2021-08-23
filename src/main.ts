@@ -16,6 +16,9 @@ import {
   NLayoutHeader,
   NLayoutSider,
   NMenu,
+  NCard,
+  NConfigProvider,
+  NElement,
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -23,6 +26,7 @@ import 'vfonts/Lato.css';
 import 'vfonts/FiraCode.css';
 const naive = create({
   components: [
+    NElement,
     NButton,
     darkTheme,
     NSpace,
@@ -32,6 +36,8 @@ const naive = create({
     NLayoutHeader,
     NLayoutSider,
     NMenu,
+    NCard,
+    NConfigProvider,
   ],
 });
 

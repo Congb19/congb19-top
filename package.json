@@ -15,6 +15,7 @@
     "@eva/plugin-renderer-text": "^1.0.4",
     "axios": "^0.21.1",
     "naive-ui": "^2.16.5",
+    "sass": "^1.38.0",
     "vue": "^3.0.5",
     "vue-router": "4"
   },

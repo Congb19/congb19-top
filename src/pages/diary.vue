@@ -5,12 +5,6 @@
 <script lang="ts">
 import { ref, defineComponent } from 'vue';
 export default defineComponent({
-  props: {
-    msg: {
-      type: String,
-      required: false,
-    },
-  },
   setup: () => {
     const count = ref(0);
     return { count };
@@ -18,7 +12,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 a {
   color: #42b983;
 }
