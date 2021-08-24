@@ -12,6 +12,7 @@
     >
       <n-card class="cb-head">
         <n-menu
+          class="cb-menu"
           @update:value="handleUpdateValue"
           mode="horizontal"
           :options="menuOptions"
@@ -19,6 +20,7 @@
         <n-space class="cb-darkswitch">
           <n-button @click="theme = darkTheme">深色</n-button>
           <n-button @click="theme = null">浅色</n-button>
+          <!-- <n-switch v-model:value="active" /> -->
         </n-space>
       </n-card>
       <n-card class="cb-content">
@@ -26,7 +28,18 @@
       </n-card>
       <n-card class="cb-foot">
         <!-- <n-card id="beian"> -->
-        <a href="http://beian.miit.gov.cn">浙ICP备2021020364号-1</a>
+        <n-el
+          tag="a"
+          href="http://beian.miit.gov.cn"
+          style="
+            display: flex;
+            flex-direction: column;
+            color: var(--primary-color);
+            transition: 0.3s var(--cubic-bezier-ease-in-out);
+          "
+        >
+          浙ICP备2021020364号-1
+        </n-el>
         <!-- </n-card> -->
       </n-card>
     </n-el>
@@ -58,8 +71,9 @@ export default defineComponent({
     return {
       menuOptions,
       darkTheme,
+      active: ref(true),
       theme: ref(null),
-      handleUpdateValue(key: RouteLocationRaw, item: any) {
+      handleUpdateValue(key: RouteLocationRaw) {
         router.push(key);
         // message.info('[onUpdate:value]: ' + JSON.stringify(key))
         // message.info('[onUpdate:value]: ' + JSON.stringify(item))

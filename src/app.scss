@@ -16,9 +16,17 @@
   // line-height: 60px;
   // text-align: center;
   // border-bottom: 2px solid #ddd;
+  .cb-menu {
+    position: absolute;
+    transform: translateX(-50%);
+  }
+  .cb-darkswitch {
+    // text-align: center;
+    float: right;
+  }
 }
 .cb-content {
-  height: 100%;
+  height: 1000px;
 }
 .cb-foot {
   // position: fixed;
