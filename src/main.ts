@@ -20,6 +20,18 @@ import {
   NConfigProvider,
   NElement,
   NSwitch,
+  NH1,
+  NH2,
+  NA,
+  NH3,
+  NP,
+  NUl,
+  NLi,
+  NOl,
+  NHr,
+  NBlockquote,
+  NImage,
+  NImageGroup,
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -40,6 +52,18 @@ const naive = create({
     NCard,
     NConfigProvider,
     NSwitch,
+    NH1,
+    NH2,
+    NA,
+    NH3,
+    NP,
+    NUl,
+    NLi,
+    NOl,
+    NHr,
+    NBlockquote,
+    NImage,
+    NImageGroup,
   ],
 });
 

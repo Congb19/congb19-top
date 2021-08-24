@@ -1,15 +1,6 @@
 <template>
   <n-config-provider :theme="theme">
-    <n-el
-      tag="div"
-      class="cb-view"
-      style="
-        display: flex;
-        flex-direction: column;
-        color: var(--primary-color);
-        transition: 0.3s var(--cubic-bezier-ease-in-out);
-      "
-    >
+    <n-el tag="div" class="cb-view">
       <n-card class="cb-head">
         <n-menu
           class="cb-menu"
@@ -28,18 +19,7 @@
       </n-card>
       <n-card class="cb-foot">
         <!-- <n-card id="beian"> -->
-        <n-el
-          tag="a"
-          href="http://beian.miit.gov.cn"
-          style="
-            display: flex;
-            flex-direction: column;
-            color: var(--primary-color);
-            transition: 0.3s var(--cubic-bezier-ease-in-out);
-          "
-        >
-          浙ICP备2021020364号-1
-        </n-el>
+        <n-a href="http://beian.miit.gov.cn"> 浙ICP备2021020364号-1 </n-a>
         <!-- </n-card> -->
       </n-card>
     </n-el>
