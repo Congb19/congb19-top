@@ -1,5 +1,5 @@
 <template>
-  <n-image alt="logo" width="200" src="../src/assets/klee.jpeg" />
+  <img alt="logo" width="200" src="../assets/klee.jpeg" />
   <n-h1>你在烦恼什么呢</n-h1>
   <n-h2>这里是Congb19的小站！大家要天天开心</n-h2>
   <n-h3>有烦恼请随时联系我：</n-h3>
