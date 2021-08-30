@@ -32,6 +32,7 @@ import {
   NBlockquote,
   NImage,
   NImageGroup,
+  NDivider,
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -64,6 +65,7 @@ const naive = create({
     NBlockquote,
     NImage,
     NImageGroup,
+    NDivider,
   ],
 });
 

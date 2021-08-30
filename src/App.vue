@@ -35,8 +35,9 @@
 import { defineComponent, ref, onMounted, onUpdated } from 'vue';
 import { RouteLocationRaw } from 'vue-router';
 import router from './routes';
-import { darkTheme } from 'naive-ui';
+import { useOsTheme, darkTheme } from 'naive-ui';
 
+// 菜单
 const menuOptions = [
   {
     label: '你好！',
@@ -53,18 +54,30 @@ export default defineComponent({
   setup() {
     let theme = ref(null);
     let active = ref(false);
-    onMounted(() => {});
-    onUpdated(() => {
-      console.log('updated,', active, theme);
+    const osThemeRef = useOsTheme();
+    onMounted(() => {
+      // 匹配系统暗黑模式
+      if (osThemeRef.value == 'dark') {
+        active.value = true;
+        theme.value = darkTheme;
+      }
+      console.log(
+        'OS主题：',
+        osThemeRef.value,
+        '本站主题：',
+        theme.value == null ? 'light' : 'dark'
+      );
     });
+    onUpdated(() => {
+      // console.log('updated,', active, theme);
+    });
+    // 菜单路由跳转
     const handleRouteChange = (key: RouteLocationRaw) => {
       router.push(key);
     };
+    // 暗黑模式手动切换
     const handleDarkModeChange = (isDark: any) => {
       theme.value = isDark ? darkTheme : ref(null);
-      // if (isDark) theme.value = ref(null);
-      // else theme.value = darkTheme;
-      // console.log(isLight, theme, darkTheme);
     };
     return {
       menuOptions,
