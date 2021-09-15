@@ -22,7 +22,7 @@
   </n-li>
   <n-divider title-placement="center">碎碎念🤬：</n-divider>
   <n-p>这个网站不知道写点什么了😭，走过路过，来点 IDEA 吧~~</n-p>
-  <n-p>恋爱选我我超甜🍬</n-p>
+  <!-- <n-p>恋爱选我我超甜🍬</n-p> -->
 </template>
 
 <script lang="ts">

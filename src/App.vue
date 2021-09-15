@@ -9,8 +9,6 @@
           :options="menuOptions"
         />
         <n-card class="cb-darkswitch">
-          <!-- <n-button @click="theme = darkTheme">深色</n-button>
-          <n-button @click="theme = null">浅色</n-button> -->
           <n-label>Dark: </n-label>
           <n-switch
             v-model:value="active"
@@ -22,13 +20,10 @@
         <router-view></router-view>
       </n-card>
       <n-card class="cb-foot">
-        <!-- <n-card id="beian"> -->
         <n-a href="http://beian.miit.gov.cn"> 浙ICP备2021020364号-1 </n-a>
-        <!-- </n-card> -->
       </n-card>
     </n-el>
   </n-config-provider>
-  <!-- <n-el class="cb-view"></n-el> -->
 </template>
 
 <script lang="ts">
