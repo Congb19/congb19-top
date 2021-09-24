@@ -15,7 +15,6 @@
   <n-li> 暗黑模式自动适配 + 手动切换（↘） </n-li>
   <n-li> TODO：日记本 </n-li>
   <n-divider title-placement="center">我的其他站：</n-divider>
-  <n-p></n-p>
   <n-li>
     写小作文的地方：
     <n-a target="_blank" href="https://blog.congb19.com">Congb19的博客</n-a>

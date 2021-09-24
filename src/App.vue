@@ -9,7 +9,7 @@
           :options="menuOptions"
         />
         <n-card class="cb-darkswitch">
-          <n-label>Dark: </n-label>
+          <n-el tag="div">Dark</n-el>
           <n-switch
             v-model:value="active"
             @update:value="handleDarkModeChange"
@@ -42,7 +42,12 @@ const menuOptions = [
     label: '日记本',
     key: '/diary',
   },
+  {
+    label: '解忧杂货铺',
+    key: '/kbn',
+  },
 ];
+
 export default defineComponent({
   name: 'App',
   components: {},
@@ -56,12 +61,12 @@ export default defineComponent({
         active.value = true;
         theme.value = darkTheme;
       }
-      console.log(
-        'OS主题：',
-        osThemeRef.value,
-        '本站主题：',
-        theme.value == null ? 'light' : 'dark'
-      );
+      // console.log(
+      //   'OS主题：',
+      //   osThemeRef.value,
+      //   '本站主题：',
+      //   theme.value == null ? 'light' : 'dark'
+      // );
     });
     onUpdated(() => {
       // console.log('updated,', active, theme);
