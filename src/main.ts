@@ -33,6 +33,8 @@ import {
   NImage,
   NImageGroup,
   NDivider,
+  ButtonGroupProps,
+  NButtonGroup,
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -66,6 +68,7 @@ const naive = create({
     NImage,
     NImageGroup,
     NDivider,
+    NButtonGroup,
   ],
 });
 

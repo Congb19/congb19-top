@@ -1,6 +1,16 @@
 <template>
   <n-card class="cb-kbn__opendays">已营业 {{ openDays }} 天</n-card>
   <n-h1>Congb19 的解忧杂货铺 </n-h1>
+  <n-button-group size="large">
+    <n-button type="success" round @click="handleHappy">
+      <template #icon> 🛫 </template>
+      我要分享快乐
+    </n-button>
+    <n-button type="error" round @click="handleSad">
+      <template #icon> 💢 </template>
+      我有烦恼求助
+    </n-button>
+  </n-button-group>
 </template>
 
 <script lang="ts">
@@ -27,13 +37,19 @@ export default defineComponent({
     const welcome = () => {
       console.log('欢迎大家光临！已营业', openDays.value, '天');
     };
+    const handleHappy = () => {
+      //发送
+    };
+    const handleSad = () => {
+      //发送
+    };
     onMounted(async () => {
       setOpenDays();
       welcome();
       // console.log(Date.now(), openday.getTime());
       // happinessList.value = await getHappinessList();
     });
-    return { openDays };
+    return { openDays, handleHappy, handleSad };
   },
 });
 </script>
