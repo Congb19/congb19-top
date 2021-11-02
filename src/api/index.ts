@@ -1,6 +1,6 @@
 import req from './request';
 
-import apiList from './api';
+import apiList from './apilist';
 
 export const getHappinessList = async () => {
   let res = await req('GET', apiList.kbn.getHappinessList, {});

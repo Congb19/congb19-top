@@ -35,6 +35,9 @@ import {
   NDivider,
   ButtonGroupProps,
   NButtonGroup,
+  NModal,
+  NInput,
+  NMessageProvider,
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -54,6 +57,7 @@ const naive = create({
     NMenu,
     NCard,
     NConfigProvider,
+    NMessageProvider,
     NSwitch,
     NH1,
     NH2,
@@ -69,6 +73,8 @@ const naive = create({
     NImageGroup,
     NDivider,
     NButtonGroup,
+    NModal,
+    NInput,
   ],
 });
 

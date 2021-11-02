@@ -1,25 +1,21 @@
 // store模式
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 
 const exampleStore = {
   debug: true,
 
   // 采用reactive造state
   state: reactive({
-    message: 'testmsg',
+    message: ref('testmsg'),
   }),
 
   // action示例
   setMessageAction(newValue: string) {
-    if (this.debug) {
-      console.log('setMessageAction triggered with', newValue);
-    }
+    if (this.debug) console.log('setMessageAction triggered with', newValue);
     this.state.message = newValue;
   },
   clearMessageAction() {
-    if (this.debug) {
-      console.log('clearMessageAction triggered');
-    }
+    if (this.debug) console.log('clearMessageAction triggered');
     this.state.message = '';
   },
 };

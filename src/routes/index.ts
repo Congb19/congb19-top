@@ -6,7 +6,7 @@ import {
 
 import index from '../pages/index.vue';
 import game from '../pages/game.vue';
-import diary from '../pages/diary.vue';
+import wall from '../pages/wall.vue';
 import kbn from '../pages/kbn.vue';
 import wyw from '../pages/wyw.vue';
 
@@ -14,13 +14,13 @@ import wyw from '../pages/wyw.vue';
 const routes = [
   { path: '/', component: index },
   { path: '/game', component: game },
-  { path: '/diary', component: diary },
+  { path: '/wall', component: wall },
   { path: '/kbn', component: kbn },
   { path: '/wyw', component: wyw },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: routes,
 });
 
