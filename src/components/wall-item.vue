@@ -1,11 +1,9 @@
 <template>
-  <div>wall</div>
-  <div>{{ info }}</div>
-  <n-card title="带封面的卡片" size="medium">
+  <n-card :title="info.title" size="medium">
     <template #cover>
-      <img src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg" />
+      <img :src="info.imgsrc" />
     </template>
-    卡片内容
+    {{ info.content }}
   </n-card>
 </template>
 <script lang="ts">
@@ -16,8 +14,8 @@ export default defineComponent({
       type: Object,
     },
   },
-  setup: () => {
-    console.log('kbn-item');
+  setup: (props) => {
+    console.log('kbn-item', props.info);
   },
 });
 </script>

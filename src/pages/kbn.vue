@@ -12,7 +12,7 @@
     </n-button>
   </n-button-group>
   <kbn-item v-for="item in happinessList" :info="item"></kbn-item>
-  <div>{{ store.state.message }}</div>
+  <!-- <div>{{ store.state.message }}</div> -->
   <n-modal
     class="custom-card"
     v-model:show="showHappyModal"
@@ -105,9 +105,13 @@ export default defineComponent({
       //发送
       // let res = await postInfo({});
       //弹一个成功失败的info，成功则关闭modal，失败不关闭
-      message.success('分享成功！我审核通过后就会展示出来啦', {
-        duration: 6000,
+      // message.success('分享成功！我审核通过后就会展示出来啦', {
+      //   duration: 6000,
+      // });
+      message.warning('dbq，我还没写完，所以还分享不了QAQ', {
+        duration: 4000,
       });
+      showHappyModal.value = false;
     };
     const handleworry = () => {
       //发送

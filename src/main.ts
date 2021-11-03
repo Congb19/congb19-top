@@ -38,6 +38,8 @@ import {
   NModal,
   NInput,
   NMessageProvider,
+  NCollapse,
+  NCollapseItem,
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -75,6 +77,8 @@ const naive = create({
     NButtonGroup,
     NModal,
     NInput,
+    NCollapse,
+    NCollapseItem,
   ],
 });
 
