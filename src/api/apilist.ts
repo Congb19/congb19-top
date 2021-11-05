@@ -1,8 +1,9 @@
-const apiList = {
+export const apiList = {
+  auth: {
+    login: '/auth/login',
+  },
   kbn: {
     getHappinessList: '/kbn/getHappinessList',
     postInfo: '/kbn/postInfo',
   },
 };
-
-export default apiList;

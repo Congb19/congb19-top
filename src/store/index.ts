@@ -1,5 +1,6 @@
 // store模式
 import { reactive, ref } from 'vue';
+import { login } from '../api';
 
 const exampleStore = {
   debug: true,
@@ -7,16 +8,21 @@ const exampleStore = {
   // 采用reactive造state
   state: reactive({
     message: ref('testmsg'),
+    auth: {
+      token: '',
+    },
   }),
 
-  // action示例
-  setMessageAction(newValue: string) {
-    if (this.debug) console.log('setMessageAction triggered with', newValue);
-    this.state.message = newValue;
+  resetAuth() {
+    this.state.auth.token = '';
   },
-  clearMessageAction() {
-    if (this.debug) console.log('clearMessageAction triggered');
-    this.state.message = '';
+
+  async signIn(props: { username: string; password: string }) {
+    let res = await login(props);
+    if (res.status == 200) {
+      if (this.debug) console.log('signin ok with', props);
+      this.state.auth = res.data;
+    }
   },
 };
 

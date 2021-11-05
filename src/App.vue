@@ -54,7 +54,7 @@ export default defineComponent({
   name: 'App',
   components: {},
   setup() {
-    let theme = ref(null);
+    let theme = ref();
     let active = ref(false);
     const osThemeRef = useOsTheme();
     onMounted(() => {

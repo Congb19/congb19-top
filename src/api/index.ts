@@ -1,6 +1,6 @@
 import req from './request';
 
-import apiList from './apilist';
+import { apiList } from './apilist';
 
 export const getHappinessList = async () => {
   let res = await req('GET', apiList.kbn.getHappinessList, {});
@@ -8,5 +8,9 @@ export const getHappinessList = async () => {
 };
 export const postInfo = async (params: object) => {
   let res = await req('POST', apiList.kbn.postInfo, params);
+  return res;
+};
+export const login = async (params: object) => {
+  let res = await req('POST', apiList.auth.login, params);
   return res;
 };

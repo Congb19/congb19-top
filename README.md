@@ -13,6 +13,14 @@ Vue 3, Typescript, Vite, scss, Naive UI
 
 ## ideas
 
+Admin:
+Dashboard
+
+1. 审核大家发送的快乐和烦恼
+2. 增加 Wall 的内容
+3. 写 miniblog，待商榷，或许对接到 congb19-blog 去会比较好？
+4. 需要登陆系统。
+
 Feat 1: 解忧杂货铺！
 
 1. 把游客的快乐以卡片形式贴出
@@ -27,9 +35,14 @@ Feat 2: 成就墙
 3. 游戏卡片 图 标题 评价 底部加 wiki 链接，
 4. 音乐卡片 图 标题 简介 底部加 demo 链接
 
+Feat 3: miniblog 待商榷
+
+1. 文章卡片，文章详情页
+
 Tips:
 
-1. 字体大小
-2. 瀑布式堆叠
-3. 大量 item 懒加载
+0. darkmode，自适应和手动切换
+1. 切到 darkmode 时，弹一个灯泡挂在顶端；切到白天时滑一个太阳出来，根据时间确定位置。
+2. 字体大小 随机 自动适配
+3. 瀑布式堆叠 + 大量 item 懒加载
 4.

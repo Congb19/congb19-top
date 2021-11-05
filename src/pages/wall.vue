@@ -1,5 +1,5 @@
 <template>
-  <n-collapse default-expanded-names="1" accordion>
+  <n-collapse default-expanded-names="['1', '2']">
     <n-collapse-item title="GAME!" name="1">
       <!-- <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi a
