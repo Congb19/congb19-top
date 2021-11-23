@@ -21,7 +21,6 @@
     title="分享快乐！"
     size="medium"
     :bordered="false"
-    :segmented="segmented"
   >
     <n-input
       v-model:value="happyForm.author_name"

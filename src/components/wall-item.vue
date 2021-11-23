@@ -12,6 +12,11 @@ export default defineComponent({
   props: {
     info: {
       type: Object,
+      default: {
+        imgsrc: 'https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg',
+        title: 'default',
+        content: 'default',
+      },
     },
   },
   setup: (props) => {
