@@ -1,29 +1,28 @@
 <template>
   <n-config-provider :theme="theme">
     <n-message-provider>
-      <n-el tag="div" class="cb-view">
-        <n-card class="cb-head" content-style="padding: 5px;">
-          <n-menu
-            class="cb-menu"
-            @update:value="handleRouteChange"
-            mode="horizontal"
-            :options="menuOptions"
+      <n-card class="cb-background"></n-card>
+      <n-card class="cb-head" content-style="padding: 5px;">
+        <n-menu
+          class="cb-menu"
+          @update:value="handleRouteChange"
+          mode="horizontal"
+          :options="menuOptions"
+        />
+        <n-card class="cb-darkswitch">
+          <n-el tag="div">Dark</n-el>
+          <n-switch
+            v-model:value="active"
+            @update:value="handleDarkModeChange"
           />
-          <n-card class="cb-darkswitch">
-            <n-el tag="div">Dark</n-el>
-            <n-switch
-              v-model:value="active"
-              @update:value="handleDarkModeChange"
-            />
-          </n-card>
         </n-card>
-        <n-card class="cb-content">
-          <router-view></router-view>
-        </n-card>
-        <n-card class="cb-foot">
-          <n-a href="http://beian.miit.gov.cn"> 浙ICP备2021020364号-1 </n-a>
-        </n-card>
-      </n-el>
+      </n-card>
+      <n-card class="cb-content">
+        <router-view></router-view>
+      </n-card>
+      <n-card class="cb-foot">
+        <n-a href="http://beian.miit.gov.cn"> 浙ICP备2021020364号-1 </n-a>
+      </n-card>
     </n-message-provider>
   </n-config-provider>
 </template>
@@ -47,6 +46,10 @@ const menuOptions = [
   {
     label: '解忧杂货铺',
     key: '/kbn',
+  },
+  {
+    label: '秘密房间',
+    key: '/admin/dashboard',
   },
 ];
 

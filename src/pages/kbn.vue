@@ -101,7 +101,6 @@ export default defineComponent({
     };
     const handleHappy = async () => {
       console.log('handle happy', happyForm.value);
-      store.setMessageAction('changed!!');
       //发送
       // let res = await postInfo({});
       //弹一个成功失败的info，成功则关闭modal，失败不关闭

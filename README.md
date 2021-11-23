@@ -14,7 +14,7 @@ Vue 3, Typescript, Vite, scss, Naive UI
 ## ideas
 
 Admin:
-Dashboard
+Dashboard (秘密房间)
 
 1. 审核大家发送的快乐和烦恼
 2. 增加 Wall 的内容
@@ -41,7 +41,7 @@ Feat 3: miniblog 待商榷
 
 Tips:
 
-0. darkmode，自适应和手动切换
+0. ~~darkmode，自适应和手动切换（√）~~
 1. 切到 darkmode 时，弹一个灯泡挂在顶端；切到白天时滑一个太阳出来，根据时间确定位置。
 2. 字体大小 随机 自动适配
 3. 瀑布式堆叠 + 大量 item 懒加载
