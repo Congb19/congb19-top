@@ -9,19 +9,18 @@
           mode="horizontal"
           :options="menuOptions"
         />
-        <n-card class="cb-darkswitch">
-          <n-el tag="div">Dark</n-el>
-          <n-switch
-            v-model:value="active"
-            @update:value="handleDarkModeChange"
-          />
-        </n-card>
       </n-card>
-      <n-card class="cb-content">
+      <n-card class="cb-content" content-style="padding-bottom: 70px;">
         <router-view></router-view>
       </n-card>
-      <n-card class="cb-foot">
-        <n-a href="http://beian.miit.gov.cn"> 浙ICP备2021020364号-1 </n-a>
+      <n-card class="cb-foot" content-style="padding: 0;">
+        <n-a class="cb-beian" href="http://beian.miit.gov.cn">
+          浙ICP备2021020364号-1
+        </n-a>
+      </n-card>
+      <n-card class="cb-darkswitch">
+        <n-el tag="div">Dark</n-el>
+        <n-switch v-model:value="active" @update:value="handleDarkModeChange" />
       </n-card>
     </n-message-provider>
   </n-config-provider>
