@@ -4,6 +4,6 @@ export const apiList = {
   },
   kbn: {
     getHappinessList: '/kbn/getHappinessList',
-    postInfo: '/kbn/postInfo',
+    postKbn: '/kbn/postKbn',
   },
 };

@@ -35,19 +35,19 @@ import { useOsTheme, darkTheme } from 'naive-ui';
 // 菜单
 const menuOptions = [
   {
-    label: '你好！',
+    label: '🏠',
     key: '/',
   },
   {
-    label: '纪录墙',
+    label: '🥇',
     key: '/wall',
   },
   {
-    label: '解忧杂货铺',
+    label: '🏪',
     key: '/kbn',
   },
   {
-    label: '秘密房间',
+    label: '🔑',
     key: '/admin/dashboard',
   },
 ];

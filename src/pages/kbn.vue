@@ -6,7 +6,7 @@
       <template #icon> 🛫 </template>
       我要分享快乐
     </n-button>
-    <n-button type="error" round @click="handleworry">
+    <n-button type="error" round @click="showWorryModal = true">
       <template #icon> 💢 </template>
       我有烦恼求助
     </n-button>
@@ -14,7 +14,7 @@
   <kbn-item v-for="item in happinessList" :info="item"></kbn-item>
   <!-- <div>{{ store.state.message }}</div> -->
   <n-modal
-    class="custom-card"
+    class="cb-modal"
     v-model:show="showHappyModal"
     preset="card"
     :style="modalStyle"
@@ -48,6 +48,41 @@
       </n-button>
     </template>
   </n-modal>
+  <n-modal
+    class="cb-modal"
+    v-model:show="showWorryModal"
+    preset="card"
+    :style="modalStyle"
+    title="解决烦恼！"
+    size="medium"
+    :bordered="false"
+  >
+    <n-input
+      v-model:value="worryForm.author_name"
+      placeholder="该怎么称呼你？我叫 Congb19"
+    >
+      <template #prefix> 昵称 </template>
+    </n-input>
+    <n-input
+      v-model:value="worryForm.content"
+      type="textarea"
+      placeholder="今天请小姐姐去看电影，结果被 🕊 了"
+    >
+      <template #prefix> 烦恼 ☁ </template>
+    </n-input>
+    <n-input
+      v-model:value="worryForm.contact_info"
+      placeholder="如果我能帮到你，我会来找你的！"
+    >
+      <template #prefix> 联系方式 📧 </template>
+    </n-input>
+    <template #footer>
+      <n-button type="success" round @click="handleWorry">
+        <template #icon> 🛫 </template>
+        发送
+      </n-button>
+    </template>
+  </n-modal>
 </template>
 
 <script lang="ts">
@@ -63,11 +98,11 @@ export default defineComponent({
   setup: () => {
     const message = useMessage();
     let openDays = ref(1);
-    let showHappyModal = ref(true);
-    let showworryModal = ref(true);
+    let showHappyModal = ref(false);
+    let showWorryModal = ref(false);
     let modalStyle = ref({
-      width: '600px',
-      'border-radius': '10px',
+      // width: '600px',
+      // 'border-radius': '10px',
     });
     let happyForm = ref({
       type: 0, //0: happiness, 1: worry
@@ -89,6 +124,10 @@ export default defineComponent({
         author_name: 'lyc',
       },
     ]);
+    const initData = async () => {
+      // let res = await getHappinessList();
+      // console.log(res);
+    };
     const setOpenDays = () => {
       let openday = new Date(2021, 8, 24);
       openDays.value = Math.ceil(
@@ -111,16 +150,18 @@ export default defineComponent({
       });
       showHappyModal.value = false;
     };
-    const handleworry = () => {
-      //发送
+    const handleWorry = () => {
+      message.warning('dbq，我还没写完，所以还分享不了QAQ', {
+        duration: 4000,
+      });
+      showHappyModal.value = false;
     };
     onMounted(async () => {
       //初始化
       setOpenDays();
       welcome();
       //获取
-      // let res = await getHappinessList();
-      // console.log(res);
+      await initData();
       // if ((res.status = 1)) happinessList.value = res.data;
     });
     return {
@@ -130,10 +171,10 @@ export default defineComponent({
       happyForm,
       worryForm,
       showHappyModal,
-      showworryModal,
+      showWorryModal,
       happinessList,
       handleHappy,
-      handleworry,
+      handleWorry,
     };
   },
 });
@@ -141,9 +182,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .cb-kbn__opendays {
-  width: 150px;
   position: absolute;
   right: 10px;
-  // float: right;
+  width: 150px;
 }
 </style>
