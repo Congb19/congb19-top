@@ -61,7 +61,7 @@
       v-model:value="worryForm.author_name"
       placeholder="该怎么称呼你？我叫 Congb19"
     >
-      <template #prefix> 昵称 </template>
+      <template #prefix> 昵称 🍪 </template>
     </n-input>
     <n-input
       v-model:value="worryForm.content"
@@ -89,7 +89,7 @@
 import { ref, defineComponent, onMounted } from 'vue';
 import { useMessage } from 'naive-ui';
 import store from '../store';
-import { getHappinessList, postInfo } from '../api';
+import { getHappinessList, postKbn } from '../api';
 import KbnItem from '../components/kbn-item.vue';
 export default defineComponent({
   components: {
