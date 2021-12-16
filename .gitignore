@@ -5,3 +5,8 @@ dist-ssr
 *.local
 
 public
+
+yarn-error.log
+.pnpm*
+/yarn.lock
+pnpm-lock.yaml
