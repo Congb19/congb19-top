@@ -4,10 +4,8 @@ import App from './App.vue';
 import router from './routes';
 
 import {
-  // create naive ui
   create,
   darkTheme,
-  // component
   NButton,
   NSpace,
   NLayout,
@@ -46,6 +44,10 @@ import {
 import 'vfonts/Lato.css';
 // 等宽字体
 import 'vfonts/FiraCode.css';
+
+import { create as createCombo, C } from './combo-ui';
+import './combo-ui/index.css';
+
 const naive = create({
   components: [
     NElement,
@@ -84,9 +86,12 @@ const naive = create({
   ],
 });
 
+const combo = createCombo(C.All);
+
 const app = createApp(App);
 
 app.use(router);
 app.use(naive);
+app.use(combo);
 
 app.mount('#app');

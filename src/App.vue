@@ -10,7 +10,7 @@
           :options="menuOptions"
         />
       </n-card>
-      <n-card class="cb-content" content-style="padding-bottom: 70px;">
+      <n-card class="cb-content" bordered=false content-style="padding-bottom: 70px;">
         <router-view></router-view>
       </n-card>
       <n-card class="cb-foot" content-style="padding: 0;">
@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted, onUpdated } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 import { RouteLocationRaw } from 'vue-router';
 import router from './routes';
 import { useOsTheme, darkTheme } from 'naive-ui';
@@ -50,6 +50,10 @@ const menuOptions = [
     label: '🔑',
     key: '/admin/dashboard',
   },
+  {
+    label: '💣',
+    key: '/combo/introduce',
+  },
 ];
 
 export default defineComponent({
@@ -65,15 +69,6 @@ export default defineComponent({
         active.value = true;
         theme.value = darkTheme;
       }
-      // console.log(
-      //   'OS主题：',
-      //   osThemeRef.value,
-      //   '本站主题：',
-      //   theme.value == null ? 'light' : 'dark'
-      // );
-    });
-    onUpdated(() => {
-      // console.log('updated,', active, theme);
     });
     // 菜单路由跳转
     const handleRouteChange = (key: RouteLocationRaw) => {

@@ -22,12 +22,13 @@ code {
 }
 
 // 防止微信浏览器下 输入框深色模式失效
-input {
-  background-color: transparent;
-}
-textarea {
-  background-color: transparent;
-}
+// 已提issue #1705, 2.21.3版本已修复
+// input {
+//   background-color: transparent;
+// }
+// textarea {
+//   background-color: transparent;
+// }
 
 .cb-background {
   height: 100vh;
