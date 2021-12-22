@@ -10,7 +10,7 @@
           :options="menuOptions"
         />
       </n-card>
-      <n-card class="cb-content" bordered=false content-style="padding-bottom: 70px;">
+      <n-card class="cb-content" :bordered="false" content-style="padding-bottom: 70px;">
         <router-view></router-view>
       </n-card>
       <n-card class="cb-foot" content-style="padding: 0;">
@@ -80,7 +80,6 @@ export default defineComponent({
     };
     return {
       menuOptions,
-      darkTheme,
       active,
       theme,
       handleRouteChange,

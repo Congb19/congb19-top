@@ -26,7 +26,7 @@ const className = `c-tag c-tag--regular`;
 </script>
 
 <template>
-  <Component :class="className">
+  <component :class="className">
     <slot>标签</slot>
-  </Component>
+  </component>
 </template>

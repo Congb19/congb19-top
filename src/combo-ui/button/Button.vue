@@ -14,9 +14,9 @@ const handleClick = () => {
 </script>
 
 <template>
-  <Component :class="className" @click="handleClick">
+  <component :class="className" @click="handleClick">
     <slot>按钮</slot>
-  </Component>
+  </component>
 </template>
 
 <style lang="scss" src="./button.scss"></style>
