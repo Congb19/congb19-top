@@ -8,6 +8,7 @@ import index from '../pages/index.vue';
 import wall from '../pages/wall.vue';
 import kbn from '../pages/kbn.vue';
 import errors from '../pages/errors.vue';
+import test from '../pages/test.vue';
 
 import admin from '../pages/admin/index.vue';
 import dashboard from '../pages/admin/dashboard.vue';
@@ -35,6 +36,7 @@ const routes = [
   },
   { path: '/wall', component: wall },
   { path: '/kbn', component: kbn },
+  { path: '/test', component: test },
   { path: '/', component: index },
   { path: '/:pathMatch(.*)', component: errors, meta: { status: '404' } },
 ];

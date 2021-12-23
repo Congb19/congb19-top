@@ -1,6 +1,6 @@
 # Combo UI
 
-Congb19 的 Vue 3 组件库。Congb19's Vue 3 Component Library.
+Congb19 的 Vue 3 组件库。
 
 文档地址：combo.congb19.com
 
@@ -31,7 +31,7 @@ app.mount('#app');
 
 ```vue
 <template>
-  <CTag round size="large">A Cool Tag!</CTag>
+  <CTag round size="l">A Large Tag!</CTag>
 </template>
 ```
 

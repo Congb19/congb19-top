@@ -8,25 +8,27 @@ import { PropType } from 'vue';
 const props = defineProps({
   // appearance
   size: {
-    type: String as PropType<'small' | 'regular' | 'large'>,
-    default: 'regular',
+    type: String as PropType<'s' | 'm' | 'l' | 'xl'>,
+    default: 'm',
   },
   color: {
     type: String,
-    default: '#666',
+    default: '#aa0000',
   },
   round: {
     type: Boolean,
-    default: true,
+    default: false,
   },
 
   // action
 });
-const className = `c-tag c-tag--regular`;
+const className = `c-tag c-tag--${props.size} ${props.round?'c-tag--round':null} `;
 </script>
 
 <template>
-  <component :class="className">
+  <div :class="className">
     <slot>标签</slot>
-  </component>
+  </div>
 </template>
+
+<style lang="sass" src="./tag.scss" scoped></style>
