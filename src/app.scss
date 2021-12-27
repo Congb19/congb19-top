@@ -1,7 +1,17 @@
+@font-face {
+  font-style: normal;
+  font-family: 'HarmonyOS_Regular';
+  /*引入HarmonyOS_Sans_SC，目录别搞错*/
+  src: url('./assets/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
+}
+body {
+  font-family: PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
   text-align: center;
   color: #2c3e50;
 }
