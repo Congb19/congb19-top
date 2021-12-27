@@ -23,7 +23,7 @@ const exampleStore = {
     let res = await login(props);
     if (res.status == 200) {
       if (this.debug) console.log('signin ok with key: ', props);
-      this.state.auth = res.data;
+      // this.state.auth = res.data;
     }
   },
 };
