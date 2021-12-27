@@ -10,12 +10,12 @@
           :options="menuOptions"
         />
       </n-card>
-      <!-- <n-card class="cb-content" :bordered="false" content-style="padding-bottom: 70px;">
+      <n-card class="cb-content" :bordered="false" content-style="padding-bottom: 70px;">
         <router-view></router-view>
-      </n-card> -->
-      <div class="cb-content">
+      </n-card>
+      <!-- <div class="cb-content">
         <div style="padding-bottom: 70px;"><router-view></router-view></div>
-      </div>
+      </div> -->
       <n-card class="cb-foot" content-style="padding: 0;">
         <n-a class="cb-beian" href="http://beian.miit.gov.cn">
           浙ICP备2021020364号-1

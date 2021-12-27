@@ -58,11 +58,12 @@ code {
 }
 .cb-content {
   position: absolute;
-  box-sizing: border-box;
   width: 100%;
   top: 50px;
   bottom: 50px;
-  padding: 20px;
+  // box-sizing: border-box;
+  // padding: 20px;
+  // color: inherit;
 }
 .cb-foot {
   position: fixed;

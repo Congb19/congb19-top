@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview",
-    "wdev": "webpack --config ./webpack.config.js"
+    "serve": "vite preview"
   },
   "dependencies": {
     "@eva/eva.js": "^1.2.3",
