@@ -4,14 +4,19 @@
   /*引入HarmonyOS_Sans_SC，目录别搞错*/
   src: url('./assets/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
 }
+@font-face {
+  font-style: normal;
+  font-family: 'MiSans';
+  src: url('./assets/MiSans-Regular.ttf') format('truetype');
+}
 body {
-  font-family: PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important;
+  font-family: PingFang SC, MiSans, HarmonyOS_Regular, Helvetica Neue,
+    Microsoft YaHei, sans-serif !important;
 }
 #app {
   // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
   text-align: center;
   color: #2c3e50;
 }
@@ -30,15 +35,6 @@ code {
   border-radius: 4px;
   color: #304455;
 }
-
-// 防止微信浏览器下 输入框深色模式失效
-// 已提issue #1705, 2.21.3版本已修复
-// input {
-//   background-color: transparent;
-// }
-// textarea {
-//   background-color: transparent;
-// }
 
 .cb-background {
   height: 100vh;
