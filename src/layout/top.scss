@@ -9,33 +9,28 @@
   font-family: 'MiSans';
   src: url('./assets/MiSans-Regular.ttf') format('truetype');
 }
-body {
+
+.cb-layout--top {
   font-family: PingFang SC, MiSans, HarmonyOS_Regular, Helvetica Neue,
     Microsoft YaHei, sans-serif !important;
-}
-#app {
-  // font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-a {
+  a {
   color: #42b983;
+  }
+  label {
+    margin: 0 0.5em;
+    font-weight: bold;
+  }
+  code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #304455;
+  }
 }
-
-label {
-  margin: 0 0.5em;
-  font-weight: bold;
-}
-
-code {
-  background-color: #eee;
-  padding: 2px 4px;
-  border-radius: 4px;
-  color: #304455;
-}
-
 .cb-background {
   height: 100vh;
   width: 100vw;

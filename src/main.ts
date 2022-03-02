@@ -95,3 +95,5 @@ app.use(naive);
 app.use(combo);
 
 app.mount('#app');
+
+// router.push('/top');
