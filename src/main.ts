@@ -3,6 +3,7 @@ import App from './App.vue';
 
 import router from './routes';
 
+// naive-ui
 import {
   create,
   darkTheme,
@@ -44,10 +45,6 @@ import {
 import 'vfonts/Lato.css';
 // 等宽字体
 import 'vfonts/FiraCode.css';
-
-import { create as createCombo, C } from './combo-ui';
-import './combo-ui/index.css';
-
 const naive = create({
   components: [
     NElement,
@@ -86,13 +83,22 @@ const naive = create({
   ],
 });
 
+// combo-ui
+import { create as createCombo, C } from './combo-ui';
+import './combo-ui/index.css';
 const combo = createCombo(C.All);
 
+// varlet-ui
+import Varlet from '@varlet/ui'
+import '@varlet/ui/es/style.js'
+
+// app
 const app = createApp(App);
 
 app.use(router);
 app.use(naive);
 app.use(combo);
+app.use(Varlet);
 
 app.mount('#app');
 
