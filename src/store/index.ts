@@ -6,7 +6,7 @@ const exampleStore = {
   debug: true,
 
   // 采用reactive造state
-  state: reactive({
+  state_auth: reactive({
     message: ref('testmsg'),
     auth: {
       isAdmin: true,
@@ -14,15 +14,19 @@ const exampleStore = {
     },
   }),
 
+  state_app: reactive({
+    path: ref('/'),
+  }),
+
   resetAuth() {
-    this.state.auth.token = '';
-    this.state.auth.isAdmin = false;
+    this.state_auth.auth.token = '';
+    this.state_auth.auth.isAdmin = false;
   },
 
   async signIn(props: { key: string }) {
     let res = await login(props);
     if (res.status == 200) {
-      if (this.debug) console.log('signin ok with key: ', props);
+      if (import.meta.env.DEV) console.log('signin ok with key: ', props);
       // this.state.auth = res.data;
     }
   },

@@ -1,6 +1,14 @@
 import req from './request';
 
-import { apiList } from './apilist';
+const apiList = {
+  auth: {
+    login: '/auth/login',
+  },
+  kbn: {
+    getHappinessList: '/kbn/getHappinessList',
+    postKbn: '/kbn/postKbn',
+  },
+};
 
 export const getHappinessList = async () => {
   let res = await req('GET', apiList.kbn.getHappinessList, {});

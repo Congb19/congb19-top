@@ -5,5 +5,6 @@
   <CTag size="m">TestTag1</CTag>
   <CTag size="l">测试标签2</CTag>
   <CTag size="xl" round>测试标签3</CTag>
+  <van-button type="primary">主要按钮</van-button>
 </template>
 <script setup lang="ts"></script>

@@ -31,4 +31,31 @@ const className = `c-tag c-tag--${props.size} ${props.round?'c-tag--round':null}
   </div>
 </template>
 
-<style lang="sass" src="./tag.scss" scoped></style>
+<style lang="scss" scoped>
+.c-tag {
+  display: inline-block;
+  border: 1px red solid;
+  border-width: 1px;
+  padding: 0 5px 0 5px;
+  // border-radius: 3px;
+}
+.c-tag--s {
+  font-size: 10px;
+  height: 20px;
+  line-height: 20px;
+}
+.c-tag--m {
+  font-size: 14px;
+  height: 24px;
+  line-height: 24px;
+}
+.c-tag--l {
+  font-size: 18px;
+}
+.c-tag--xl {
+  font-size: 22px;
+}
+.c-tag--round{
+  border-radius: 11px;
+}
+</style>

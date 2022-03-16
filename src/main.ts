@@ -1,7 +1,11 @@
+// app
 import { createApp } from 'vue';
 import App from './App.vue';
+const app = createApp(App);
 
+// router
 import router from './routes';
+app.use(router);
 
 // naive-ui
 import {
@@ -82,24 +86,18 @@ const naive = create({
     NResult,
   ],
 });
+app.use(naive);
 
 // combo-ui
 import { create as createCombo, C } from './combo-ui';
 import './combo-ui/index.css';
 const combo = createCombo(C.All);
-
-// varlet-ui
-import Varlet from '@varlet/ui'
-import '@varlet/ui/es/style.js'
-
-// app
-const app = createApp(App);
-
-app.use(router);
-app.use(naive);
 app.use(combo);
-app.use(Varlet);
 
+// vant
+import { Button, ConfigProvider } from 'vant';
+app.use(Button);
+app.use(ConfigProvider);
+
+// mount!
 app.mount('#app');
-
-// router.push('/top');

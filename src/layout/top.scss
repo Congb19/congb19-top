@@ -1,13 +1,12 @@
 @font-face {
   font-style: normal;
   font-family: 'HarmonyOS_Regular';
-  /*引入HarmonyOS_Sans_SC，目录别搞错*/
-  src: url('./assets/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
+  src: url('../assets/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
 }
 @font-face {
   font-style: normal;
   font-family: 'MiSans';
-  src: url('./assets/MiSans-Regular.ttf') format('truetype');
+  src: url('../assets/MiSans-Regular.ttf') format('truetype');
 }
 
 .cb-layout--top {
@@ -18,7 +17,7 @@
   text-align: center;
   color: #2c3e50;
   a {
-  color: #42b983;
+    color: #42b983;
   }
   label {
     margin: 0 0.5em;

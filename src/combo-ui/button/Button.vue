@@ -19,4 +19,6 @@ const handleClick = () => {
   </component>
 </template>
 
-<style lang="scss" src="./button.scss"></style>
+<style lang="scss">
+
+</style>
