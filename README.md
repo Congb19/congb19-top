@@ -13,13 +13,8 @@ Vue 3, Typescript, Vite, scss, Naive UI
 
 ## ideas
 
-Admin:
-Dashboard (秘密房间)
+### Top 门面主页
 
-1. 审核大家发送的快乐和烦恼
-2. 增加 Wall 的内容
-3. 写 miniblog，待商榷，或许对接到 congb19-blog 去会比较好？
-4. **需要登陆系统。**
 
 Feat 1: 解忧杂货铺！
 
@@ -30,7 +25,7 @@ Feat 1: 解忧杂货铺！
 
 Feat 2: 成就墙
 
-1. 展示 Congb19 的 power！
+1. 墙
 2. 内容：已通关游戏、（未来）音乐作品、。。。
 3. ~~游戏卡片 图 标题 评价 底部加 wiki 链接~~
 4. ~~音乐卡片 图 标题 简介 底部加 demo 链接~~
@@ -47,4 +42,18 @@ Tips:
 1. 切到 darkmode 时，弹一个灯泡挂在顶端；切到白天时滑一个太阳出来，根据时间确定位置。
 2. 字体大小 随机 自动适配
 3. 瀑布式堆叠 + 大量 item 懒加载
-4.
+
+### APP H5应用
+
+Feat 1: congb19-club
+
+1. 社区论坛类app
+2. 自建组件库
+
+### Admin: Dashboard (秘密房间)
+
+1. 审核大家发送的快乐和烦恼
+2. 增加 Wall 的内容
+3. 写 miniblog，待商榷，或许对接到 congb19-blog 去会比较好？
+4. 配置club的模块
+5. **需要登陆系统。**

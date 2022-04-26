@@ -1,7 +1,9 @@
 <template>
   <div>app index</div>
-  <var-button  type="info">测试按钮！</var-button>
+  <van-button type="primary">按钮!</van-button>
 </template>
 <script lang="ts" setup>
-
+const hello = () => {
+  console.log('hello');
+};
 </script>
