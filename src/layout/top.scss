@@ -1,9 +1,9 @@
-@font-face {
-  font-style: normal;
-  font-family: 'HarmonyOS_Regular';
-  /*引入HarmonyOS_Sans_SC，目录别搞错*/
-  src: url('./assets/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
-}
+// @font-face {
+//   font-style: normal;
+//   font-family: 'HarmonyOS_Regular';
+//   /*引入HarmonyOS_Sans_SC，目录别搞错*/
+//   src: url('./assets/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
+// }
 @font-face {
   font-style: normal;
   font-family: 'MiSans';
@@ -11,7 +11,7 @@
 }
 
 .cb-layout--top {
-  font-family: PingFang SC, MiSans, HarmonyOS_Regular, Helvetica Neue,
+  font-family: PingFang SC, MiSans, Helvetica Neue,
     Microsoft YaHei, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
