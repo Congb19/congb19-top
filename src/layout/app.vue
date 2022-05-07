@@ -9,4 +9,13 @@
 import { ref } from 'vue';
 const theme = ref('dark');
 </script>
-<style lang="scss" src="./app.scss"></style>
+<style lang="scss">
+@font-face {
+  font-style: normal;
+  font-family: 'MiSans';
+  src: url('../assets/MiSans-Regular.ttf') format('truetype');
+}
+.cb-layout--app {
+  font-family: PingFang SC, MiSans, Helvetica Neue, Microsoft YaHei, sans-serif !important;
+}
+</style>

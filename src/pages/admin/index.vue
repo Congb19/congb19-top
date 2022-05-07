@@ -1,6 +1,5 @@
 <template>
-  <n-card>admin</n-card>
-  <router-view></router-view>
+  <n-card>admin index</n-card>
 </template>
 <script setup lang="ts">
 </script>

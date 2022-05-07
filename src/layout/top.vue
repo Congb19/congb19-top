@@ -18,9 +18,6 @@
         >
           <router-view></router-view>
         </n-card>
-        <!-- <div class="cb-content">
-        <div style="padding-bottom: 70px;"><router-view></router-view></div>
-      </div> -->
         <n-card class="cb-foot" content-style="padding: 0;">
           <n-a class="cb-beian" href="http://beian.miit.gov.cn">
             浙ICP备2021020364号-1
@@ -58,14 +55,14 @@ const menuOptions = [
     label: '🏪',
     key: '/top/kbn',
   },
-  {
-    label: '🔑',
-    key: '/top/admin/dashboard',
-  },
-  {
-    label: '💣',
-    key: '/top/combo/introduce',
-  },
+  // {
+  //   label: '🔑',
+  //   key: '/top/admin/dashboard',
+  // },
+  // {
+  //   label: '💣',
+  //   key: '/top/combo/introduce',
+  // },
 ];
 
 export default defineComponent({
@@ -101,4 +98,84 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss" src="./top.scss"></style>
+<style lang="scss">
+@font-face {
+  font-style: normal;
+  font-family: 'MiSans';
+  src: url('../assets/MiSans-Regular.ttf') format('truetype');
+}
+
+.cb-layout--top {
+  font-family: PingFang SC, MiSans, Helvetica Neue, Microsoft YaHei, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  a {
+    color: #42b983;
+  }
+  label {
+    margin: 0 0.5em;
+    font-weight: bold;
+  }
+  code {
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+    color: #304455;
+  }
+}
+.cb-background {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+.cb-head {
+  position: fixed;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  z-index: 9997;
+  .cb-menu {
+    position: absolute;
+    // width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.cb-content {
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  bottom: 50px;
+  // box-sizing: border-box;
+  // padding: 20px;
+  // color: inherit;
+}
+.cb-foot {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+  z-index: 9998;
+  .cb-beian {
+    padding: 0;
+  }
+}
+.cb-darkswitch {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 90px;
+  height: 90px;
+  z-index: 9999;
+  border-radius: 50%;
+}
+
+.cb-modal {
+  width: 600px;
+  border-radius: 10px;
+}
+</style>

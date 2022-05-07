@@ -1,6 +1,6 @@
 <template>
   <!-- todo: 侧边栏菜单+路由跳转 -->
-  <router-view></router-view>
+  <div>combo index</div>
 </template>
 <script setup lang="ts">
 import { RouteLocationRaw } from 'vue-router';
