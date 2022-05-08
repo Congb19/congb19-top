@@ -44,6 +44,7 @@ import {
   NCollapse,
   NCollapseItem,
   NResult,
+  NTag,
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -84,6 +85,7 @@ const naive = create({
     NCollapse,
     NCollapseItem,
     NResult,
+    NTag
   ],
 });
 app.use(naive);
