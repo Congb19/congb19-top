@@ -4,6 +4,8 @@ import {
   // createWebHashHistory,
 } from 'vue-router';
 
+//login
+import login from '../pages/login.vue';
 //layout
 import top from '../layout/top.vue';
 import app from '../layout/app.vue';
@@ -18,17 +20,16 @@ import errors from '../pages/errors.vue';
 import test from '../pages/test.vue';
 //admin下的页面
 import dashboard from '../pages/admin/dashboard.vue';
-import login from '../pages/admin/login.vue';
 import admin_index from '../pages/admin/index.vue';
 //combo下的页面
 import introduce from '../pages/combo/introduce.vue';
 import combo_index from '../pages/combo/index.vue';
-
 //app 页面
 import index_app from '../pages-app/index.vue';
 
 // routes
 const routes = [
+  { path: '/login', component: login },
   {
     path: '/app',
     component: app,
@@ -39,7 +40,6 @@ const routes = [
     component: admin,
     children: [
       { path: 'dashboard', component: dashboard },
-      { path: 'login', component: login },
       { path: '', component: admin_index },
       {
         path: ':pathMatch(.*)',

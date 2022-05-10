@@ -1,6 +1,6 @@
 <template>
   <n-card>admin login</n-card>
-  <n-input v-model:value="value"></n-input>
+  <!-- <n-input v-model:value="value"></n-input> -->
 </template>
 <script setup lang="ts">
 import { NInput } from 'naive-ui';

@@ -4,8 +4,7 @@
       <n-layout-header bordered>
         <n-card :bordered="false">congb19-admin</n-card>
       </n-layout-header>
-      <n-layout has-sider
-          style="height: calc(100vh - 62px)">
+      <n-layout has-sider style="height: calc(100vh - 65px)">
         <n-layout-sider
           bordered
           collapse-mode="width"
@@ -24,6 +23,7 @@
             :render-label="renderMenuLabel"
             :render-icon="renderMenuIcon"
             @update:value="menuCheck"
+            :value="path"
           />
         </n-layout-sider>
         <n-layout>
@@ -40,50 +40,54 @@
               <span @click="tagCheck(item.key)">{{ item.name }}</span>
             </n-tag>
           </div>
-          <router-view></router-view>
+          <n-scrollbar style="max-height: calc(100vh - 94px)">
+            <router-view></router-view>
+          </n-scrollbar>
         </n-layout>
       </n-layout>
     </n-layout>
   </n-space>
 </template>
 <script setup lang="ts">
-import { h, ref, reactive, Component } from 'vue';
+import { h, ref, reactive, Component, onMounted } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
-import { NIcon } from 'naive-ui';
+import { useStorage } from '@vueuse/core';
+import { NIcon, NScrollbar } from 'naive-ui';
 import type { MenuOption } from 'naive-ui';
 import {
   BookmarkOutline,
-  LaptopOutline as WorkIcon,
-  LogOutOutline as HomeIcon,
+  LaptopOutline,
+  LogOutOutline,
 } from '@vicons/ionicons5';
 
-const router = useRouter();
-
-// menu
+// common
+// ------------------------------------------------------------------------------
 const collapsed = ref(true);
-const menuCollapse = (flag: boolean) => {
-  collapsed.value = flag;
-};
-const menuCheck = (key: string, item: MenuOption) => {
-  console.log(key);
-  let exist = false;
-  tags.forEach((item, index) => {
-    if (item.key == key) exist = true;
-  });
-  if (!exist) {
-    let newTag = {
-      name: item.name as string,
-      key: item.key as string,
-      actived: true,
-      closable: true,
-    };
-    tags.push(newTag);
-  }
-  tagCheck(key);
-};
+const path = ref('/admin');
 const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, { default: () => h(icon) });
 };
+const storage = useStorage('test', 1);
+// router
+// ------------------------------------------------------------------------------
+const router = useRouter();
+router.afterEach((to, from, failure) => {
+  //如果路由发生变化
+  if (to.fullPath !== from.fullPath) {
+    const key = to.fullPath;
+    // 同步菜单
+    path.value = to.fullPath;
+    // 同步tag
+    tagSync(key);
+  }
+});
+onMounted(() => {
+  const key = router.currentRoute.value.fullPath;
+  tagSync(key);
+});
+
+// menu
+// ------------------------------------------------------------------------------
 const menuOptions: MenuOption[] = [
   {
     name: '首页',
@@ -97,7 +101,7 @@ const menuOptions: MenuOption[] = [
       { default: () => '首页！' }
     ),
     key: '/admin',
-    icon: renderIcon(WorkIcon),
+    icon: renderIcon(LaptopOutline),
   },
   {
     name: '仪表盘',
@@ -111,16 +115,50 @@ const menuOptions: MenuOption[] = [
       { default: () => '仪表盘' }
     ),
     key: '/admin/dashboard',
-    icon: renderIcon(WorkIcon),
+    icon: renderIcon(LaptopOutline),
   },
   {
-    name: 'kbn',
-    label: 'kbn',
-    key: 'dance-dance-dance',
-    icon: renderIcon(HomeIcon),
-    children: [],
+    name: '退出',
+    label: h(
+      RouterLink,
+      {
+        to: {
+          path: '/login',
+        },
+      },
+      { default: () => '退出' }
+    ),
+    key: '/login',
+    icon: renderIcon(LogOutOutline),
   },
 ];
+const getMenuOption = (
+  menuOptions: MenuOption[] | undefined,
+  key: string
+): MenuOption | null => {
+  let res: MenuOption | null = null;
+  if (menuOptions)
+    for (let i = 0; i < menuOptions.length; i++) {
+      if (menuOptions[i].key == key) {
+        res = menuOptions[i];
+        return res;
+      }
+      if (menuOptions[i].children) {
+        res = getMenuOption(menuOptions[i].children, key);
+        if (res) return res;
+      }
+    }
+  return res;
+};
+const menuCollapse = (flag: boolean) => {
+  collapsed.value = flag;
+};
+const menuCheck = (key: string, item: MenuOption) => {
+  //路由RouterLink会处理。
+  //添加tag，并check它
+  tagAdd(key, item);
+  tagCheck(key);
+};
 const renderMenuLabel = (option: MenuOption) => {
   if ('href' in option) {
     return h(
@@ -140,6 +178,7 @@ const renderMenuIcon = (option: MenuOption) => {
 };
 
 // tag
+// ------------------------------------------------------------------------------
 let tags = reactive([
   {
     name: '首页',
@@ -148,6 +187,21 @@ let tags = reactive([
     closable: false,
   },
 ]);
+const tagAdd = (key: string, item: MenuOption) => {
+  let exist = false;
+  tags.forEach((item, index) => {
+    if (item.key == key) exist = true;
+  });
+  if (!exist) {
+    let newTag = {
+      name: item.name as string,
+      key: item.key as string,
+      actived: true,
+      closable: true,
+    };
+    tags.push(newTag);
+  }
+};
 const tagClose = (key: string) => {
   tags.forEach((item, index) => {
     if (item.key == key) {
@@ -169,5 +223,12 @@ const tagCheck = (key: string) => {
       tags[index].actived = true;
     } else tags[index].actived = false;
   });
+};
+const tagSync = (nowKey: string) => {
+  const menuItem = getMenuOption(menuOptions, nowKey);
+  if (menuItem) {
+    tagAdd(nowKey, menuItem);
+    tagCheck(nowKey);
+  }
 };
 </script>
