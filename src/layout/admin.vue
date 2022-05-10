@@ -68,6 +68,7 @@ const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, { default: () => h(icon) });
 };
 const storage = useStorage('test', 1);
+
 // router
 // ------------------------------------------------------------------------------
 const router = useRouter();
@@ -83,6 +84,7 @@ router.afterEach((to, from, failure) => {
 });
 onMounted(() => {
   const key = router.currentRoute.value.fullPath;
+  path.value = key;
   tagSync(key);
 });
 
