@@ -52,7 +52,16 @@
 import { h, ref, reactive, Component, onMounted } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
 import { useStorage } from '@vueuse/core';
-import { NIcon, NScrollbar } from 'naive-ui';
+import {
+  NSpace,
+  NCard,
+  NLayout,
+  NLayoutHeader,
+  NLayoutSider,
+  NMenu,
+  NScrollbar,
+  NIcon,
+} from 'naive-ui';
 import type { MenuOption } from 'naive-ui';
 import {
   BookmarkOutline,
