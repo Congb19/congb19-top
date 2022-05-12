@@ -155,7 +155,8 @@ const tagCheck = (key: string) => {
 };
 const tagSync = (nowKey: string) => {
   const menuItem = getTreeItem(menuOptions, nowKey);
-  if (menuItem) {
+  console.log('sync', menuItem);
+  if (menuItem && menuItem.key.indexOf('/admin') >= 0) {
     tagAdd(nowKey, menuItem);
     tagCheck(nowKey);
   }
