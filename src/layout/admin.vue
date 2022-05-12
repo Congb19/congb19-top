@@ -28,7 +28,6 @@
         </n-layout-sider>
         <n-layout>
           <div>
-            <!-- <n-tag :bordered="false"> 💣 </n-tag> -->
             <n-tag
               v-for="item in tags"
               :closable="item.closable"
@@ -49,34 +48,33 @@
   </n-space>
 </template>
 <script setup lang="ts">
-import { h, ref, reactive, Component, onMounted } from 'vue';
-import { RouterLink, useRouter } from 'vue-router';
+import { ref, reactive, onMounted } from 'vue';
+import { useRouter } from 'vue-router';
 import { useStorage } from '@vueuse/core';
 import {
   NSpace,
   NCard,
+  NTag,
   NLayout,
   NLayoutHeader,
   NLayoutSider,
   NMenu,
   NScrollbar,
-  NIcon,
 } from 'naive-ui';
 import type { MenuOption } from 'naive-ui';
+
+import { getTreeItem } from '../utils/useCommon';
 import {
-  BookmarkOutline,
-  LaptopOutline,
-  LogOutOutline,
-} from '@vicons/ionicons5';
+  collapsed,
+  menuOptions,
+  menuCollapse,
+  renderMenuLabel,
+  renderMenuIcon,
+} from '../utils/useMenu';
 
 // common
 // ------------------------------------------------------------------------------
-const collapsed = ref(true);
 const path = ref('/admin');
-const renderIcon = (icon: Component) => {
-  return () => h(NIcon, null, { default: () => h(icon) });
-};
-const storage = useStorage('test', 1);
 
 // router
 // ------------------------------------------------------------------------------
@@ -99,98 +97,16 @@ onMounted(() => {
 
 // menu
 // ------------------------------------------------------------------------------
-const menuOptions: MenuOption[] = [
-  {
-    name: '首页',
-    label: h(
-      RouterLink,
-      {
-        to: {
-          path: '/admin',
-        },
-      },
-      { default: () => '首页！' }
-    ),
-    key: '/admin',
-    icon: renderIcon(LaptopOutline),
-  },
-  {
-    name: '仪表盘',
-    label: h(
-      RouterLink,
-      {
-        to: {
-          path: '/admin/dashboard',
-        },
-      },
-      { default: () => '仪表盘' }
-    ),
-    key: '/admin/dashboard',
-    icon: renderIcon(LaptopOutline),
-  },
-  {
-    name: '退出',
-    label: h(
-      RouterLink,
-      {
-        to: {
-          path: '/login',
-        },
-      },
-      { default: () => '退出' }
-    ),
-    key: '/login',
-    icon: renderIcon(LogOutOutline),
-  },
-];
-const getMenuOption = (
-  menuOptions: MenuOption[] | undefined,
-  key: string
-): MenuOption | null => {
-  let res: MenuOption | null = null;
-  if (menuOptions)
-    for (let i = 0; i < menuOptions.length; i++) {
-      if (menuOptions[i].key == key) {
-        res = menuOptions[i];
-        return res;
-      }
-      if (menuOptions[i].children) {
-        res = getMenuOption(menuOptions[i].children, key);
-        if (res) return res;
-      }
-    }
-  return res;
-};
-const menuCollapse = (flag: boolean) => {
-  collapsed.value = flag;
-};
 const menuCheck = (key: string, item: MenuOption) => {
   //路由RouterLink会处理。
   //添加tag，并check它
   tagAdd(key, item);
   tagCheck(key);
 };
-const renderMenuLabel = (option: MenuOption) => {
-  if ('href' in option) {
-    return h(
-      'a',
-      { href: option.href, target: '_blank' },
-      option.label as string
-    );
-  }
-  return option.label as string;
-};
-const renderMenuIcon = (option: MenuOption) => {
-  // 渲染图标占位符以保持缩进
-  if (option.key === '??') return true;
-  // 返回 falsy 值，不再渲染图标及占位符
-  if (option.key === '??') return null;
-  return h(option.icon ? option.icon : h(BookmarkOutline));
-};
 
 // tag
 // ------------------------------------------------------------------------------
-let tags = reactive([
+let tagsDefault = reactive([
   {
     name: '首页',
     key: '/admin',
@@ -198,6 +114,8 @@ let tags = reactive([
     closable: false,
   },
 ]);
+const storageTags = useStorage('tags', tagsDefault);
+let tags = storageTags.value;
 const tagAdd = (key: string, item: MenuOption) => {
   let exist = false;
   tags.forEach((item, index) => {
@@ -236,7 +154,7 @@ const tagCheck = (key: string) => {
   });
 };
 const tagSync = (nowKey: string) => {
-  const menuItem = getMenuOption(menuOptions, nowKey);
+  const menuItem = getTreeItem(menuOptions, nowKey);
   if (menuItem) {
     tagAdd(nowKey, menuItem);
     tagCheck(nowKey);

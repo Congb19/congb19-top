@@ -5,6 +5,7 @@ interface Response {
   data: object;
   message: string;
 }
+
 const config = {
   baseURL: import.meta.env.DEV ? '' : 'http://www.congb19.com/api',
 };
