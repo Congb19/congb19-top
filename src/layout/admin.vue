@@ -1,67 +1,87 @@
 <template>
-  <n-space vertical>
-    <n-layout>
-      <n-layout-header bordered>
-        <n-card :bordered="false">congb19-admin</n-card>
-      </n-layout-header>
-      <n-layout has-sider style="height: calc(100vh - 65px)">
-        <n-layout-sider
-          bordered
-          collapse-mode="width"
-          :collapsed-width="64"
-          :width="240"
-          :collapsed="collapsed"
-          show-trigger
-          @collapse="menuCollapse(true)"
-          @expand="menuCollapse(false)"
-        >
-          <n-menu
-            :collapsed="collapsed"
-            :collapsed-width="64"
-            :collapsed-icon-size="22"
-            :options="menuOptions"
-            :render-label="renderMenuLabel"
-            :render-icon="renderMenuIcon"
-            @update:value="menuCheck"
-            :value="path"
-          />
-        </n-layout-sider>
-        <n-layout>
-          <div>
-            <n-tag
-              v-for="item in tags"
-              :closable="item.closable"
-              :bordered="false"
-              :key="item.key"
-              @close="tagClose(item.key)"
-              :type="item.actived ? 'success' : 'default'"
-            >
-              <span @click="tagCheck(item.key)">{{ item.name }}</span>
-            </n-tag>
+  <n-config-provider :theme="theme">
+    <n-space vertical>
+      <n-layout>
+        <n-layout-header bordered>
+          <div class="cb-header-admin">
+            <n-card :bordered="false"> congb19-admin </n-card>
+            <n-card :bordered="false">
+              <n-switch v-model:value="themeSwitch" size="medium">
+                <template #checked-icon>
+                  <n-icon :component="MoonOutline" />
+                </template>
+                <template #unchecked-icon>
+                  <n-icon :component="SunnyOutline" />
+                </template>
+              </n-switch>
+            </n-card>
           </div>
-          <n-scrollbar style="max-height: calc(100vh - 94px)">
-            <router-view></router-view>
-          </n-scrollbar>
+        </n-layout-header>
+        <n-layout has-sider style="height: calc(100vh - 65px)">
+          <n-layout-sider
+            bordered
+            collapse-mode="width"
+            :collapsed-width="64"
+            :width="240"
+            :collapsed="collapsed"
+            show-trigger
+            @collapse="menuCollapse(true)"
+            @expand="menuCollapse(false)"
+          >
+            <n-menu
+              :collapsed="collapsed"
+              :collapsed-width="64"
+              :collapsed-icon-size="22"
+              :options="menuOptions"
+              :render-label="renderMenuLabel"
+              :render-icon="renderMenuIcon"
+              @update:value="menuCheck"
+              :value="path"
+            />
+          </n-layout-sider>
+          <n-layout>
+            <div>
+              <n-tag
+                v-for="item in tags"
+                :closable="item.closable"
+                :bordered="false"
+                :key="item.key"
+                @close="tagClose(item.key)"
+                :type="item.actived ? 'success' : 'default'"
+              >
+                <span @click="tagCheck(item.key)">{{ item.name }}</span>
+              </n-tag>
+            </div>
+            <n-scrollbar style="max-height: calc(100vh - 94px)">
+              <keep-alive><router-view></router-view></keep-alive>
+            </n-scrollbar>
+          </n-layout>
         </n-layout>
       </n-layout>
-    </n-layout>
-  </n-space>
+    </n-space>
+  </n-config-provider>
 </template>
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, onMounted, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useStorage } from '@vueuse/core';
 import {
+  NConfigProvider,
   NSpace,
   NCard,
   NTag,
+  NSwitch,
+  NIcon,
   NLayout,
   NLayoutHeader,
   NLayoutSider,
   NMenu,
   NScrollbar,
 } from 'naive-ui';
+import { useOsTheme, darkTheme } from 'naive-ui';
 import type { MenuOption } from 'naive-ui';
+
+import { SunnyOutline, MoonOutline } from '@vicons/ionicons5';
 
 import { getTreeItem } from '../utils/useCommon';
 import {
@@ -75,6 +95,12 @@ import {
 // common
 // ------------------------------------------------------------------------------
 const path = ref('/admin');
+// 系统主题
+const osThemeRef = useOsTheme();
+let theme = computed(() => (osThemeRef.value === 'dark' ? darkTheme : null));
+let themeSwitch = ref(osThemeRef.value === 'dark' ? true : false);
+// 自选主题
+theme = computed(() => (themeSwitch.value ? darkTheme : null));
 
 // router
 // ------------------------------------------------------------------------------
@@ -155,10 +181,16 @@ const tagCheck = (key: string) => {
 };
 const tagSync = (nowKey: string) => {
   const menuItem = getTreeItem(menuOptions, nowKey);
-  console.log('sync', menuItem);
+  // console.log('sync', menuItem);
   if (menuItem && menuItem.key.indexOf('/admin') >= 0) {
     tagAdd(nowKey, menuItem);
     tagCheck(nowKey);
   }
 };
 </script>
+<style>
+.cb-header-admin {
+  display: flex;
+  /* height: 60px; */
+}
+</style>

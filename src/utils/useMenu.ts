@@ -12,7 +12,7 @@ const renderIcon = (icon: Component) => {
   return () => h(NIcon, null, { default: () => h(icon) });
 };
 
-export const collapsed = ref(true);
+export const collapsed = ref(false);
 export const menuOptions = [
   {
     name: '首页',

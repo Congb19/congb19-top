@@ -16,7 +16,7 @@
           :bordered="false"
           content-style="padding-bottom: 70px;"
         >
-          <router-view></router-view>
+          <keep-alive><router-view></router-view></keep-alive>
         </n-card>
         <n-card class="cb-foot" content-style="padding: 0;">
           <n-a class="cb-beian" href="http://beian.miit.gov.cn">
