@@ -1,5 +1,5 @@
 <template>
-  <n-card>combo introduce</n-card>
+  <div>combo introduce</div>
 </template>
 <script setup lang="ts">
 </script>

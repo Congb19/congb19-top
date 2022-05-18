@@ -93,10 +93,11 @@ const naive = create({
 app.use(naive);
 
 // combo-ui
-import { create as createCombo, C } from './combo-ui';
-import './combo-ui/index.css';
-const combo = createCombo(C.All);
-app.use(combo);
+// import { create as createCombo, C } from '../../combo-ui/src/combo-ui';
+// import { create as createCombo, C } from '../dist/combo.es.js';
+// import './combo-ui/index.css';
+// const combo = createCombo(C.All);
+// app.use(combo);
 
 // vant
 import { Button, ConfigProvider } from 'vant';

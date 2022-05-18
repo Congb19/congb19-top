@@ -22,7 +22,6 @@ import tsxtest from '../pages/tsxtest';
 import dashboard from '../pages/admin/dashboard.vue';
 import admin_index from '../pages/admin/index.vue';
 //combo下的页面
-import test from '../pages/combo/test.vue';
 import introduce from '../pages/combo/introduce.vue';
 import combo_index from '../pages/combo/index.vue';
 //app 页面
@@ -54,7 +53,6 @@ const routes = [
     component: combo,
     children: [
       { path: 'introduce', component: introduce },
-      { path: 'test', component: test },
       { path: '', component: combo_index },
       {
         path: ':pathMatch(.*)',
