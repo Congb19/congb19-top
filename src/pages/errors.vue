@@ -6,16 +6,18 @@
     :description="status.description"
   >
     <template #footer>
-      <n-button>{{ status.btn_content }}</n-button>
+      <n-button @click="why">{{ status.btn_content }}</n-button>
     </template>
   </n-result>
 </template>
 <script lang="ts">
 import { ref, defineComponent } from 'vue';
 import { useRoute } from 'vue-router';
+import { useMessage } from 'naive-ui';
 export default defineComponent({
   components: {},
   setup: () => {
+    const message = useMessage();
     const code:
       | 'info'
       | 'success'
@@ -29,11 +31,14 @@ export default defineComponent({
     let status = ref({
       title: '404 资源不存在',
       description: '生活总归带点荒谬',
-      btn_content: '找点乐子吧',
+      btn_content: '为什么？',
     });
+    const why = () => {
+      message.info('也许是我还没写好，别急！');
+    };
     const route = useRoute();
     console.log(route.meta.status);
-    return { status, code };
+    return { status, code, why };
   },
 });
 </script>

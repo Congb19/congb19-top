@@ -47,14 +47,18 @@ const menuOptions = [
     label: '🏠',
     key: '/top',
   },
-  {
-    label: '🥇',
-    key: '/top/wall',
-  },
+  // {
+  //   label: '🥇',
+  //   key: '/top/wall',
+  // },
   {
     label: '🏪',
     key: '/top/kbn',
   },
+  // {
+  //   label: '🔧',
+  //   key: '/top/tools',
+  // },
   // {
   //   label: '🔑',
   //   key: '/top/admin/dashboard',
