@@ -40,6 +40,11 @@ import { defineComponent, ref, onMounted } from 'vue';
 import { RouteLocationRaw } from 'vue-router';
 import router from '../routes';
 import { useOsTheme, darkTheme } from 'naive-ui';
+import { useTitle } from '@vueuse/core'
+
+// title
+const title = useTitle()
+title.value = '你在烦恼什么呢' 
 
 // 菜单
 const menuOptions = [
@@ -55,18 +60,6 @@ const menuOptions = [
     label: '🏪',
     key: '/top/kbn',
   },
-  // {
-  //   label: '🔧',
-  //   key: '/top/tools',
-  // },
-  // {
-  //   label: '🔑',
-  //   key: '/top/admin/dashboard',
-  // },
-  // {
-  //   label: '💣',
-  //   key: '/top/combo/introduce',
-  // },
 ];
 
 export default defineComponent({
