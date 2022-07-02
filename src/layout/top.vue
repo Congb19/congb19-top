@@ -26,8 +26,7 @@
         <n-card class="cb-darkswitch">
           <n-el tag="div">Dark</n-el>
           <n-switch
-            v-model:value="active"
-            @update:value="handleDarkModeChange"
+            v-model:value="themeSwitch"
           />
         </n-card>
       </n-message-provider>
@@ -36,10 +35,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue';
+import { defineComponent, ref, onMounted, computed } from 'vue';
 import { RouteLocationRaw } from 'vue-router';
 import router from '../routes';
 import { useOsTheme, darkTheme } from 'naive-ui';
+
+// 系统主题
+const osThemeRef = useOsTheme();
+let theme = computed(() => (osThemeRef.value === 'dark' ? darkTheme : null));
+let themeSwitch = ref(osThemeRef.value === 'dark' ? true : false);
+// 自选主题
+theme = computed(() => (themeSwitch.value ? darkTheme : null));
 
 // 菜单
 const menuOptions = [
@@ -69,30 +75,17 @@ export default defineComponent({
   name: 'top',
   components: {},
   setup() {
-    let theme = ref();
     let active = ref(false);
-    const osThemeRef = useOsTheme();
-    onMounted(() => {
-      // 匹配系统暗黑模式
-      if (osThemeRef.value == 'dark') {
-        active.value = true;
-        theme.value = darkTheme;
-      }
-    });
     // 菜单路由跳转
     const handleRouteChange = (key: RouteLocationRaw) => {
       router.push(key);
-    };
-    // 暗黑模式手动切换
-    const handleDarkModeChange = (isDark: any) => {
-      theme.value = isDark ? darkTheme : ref(null);
     };
     return {
       menuOptions,
       active,
       theme,
+      themeSwitch,
       handleRouteChange,
-      handleDarkModeChange,
     };
   },
 });
