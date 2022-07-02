@@ -39,6 +39,11 @@ import { defineComponent, ref, onMounted, computed } from 'vue';
 import { RouteLocationRaw } from 'vue-router';
 import router from '../routes';
 import { useOsTheme, darkTheme } from 'naive-ui';
+import { useTitle } from '@vueuse/core'
+
+// title
+const title = useTitle()
+title.value = '你在烦恼什么呢' 
 
 // 系统主题
 const osThemeRef = useOsTheme();
@@ -53,22 +58,14 @@ const menuOptions = [
     label: '🏠',
     key: '/top',
   },
-  {
-    label: '🥇',
-    key: '/top/wall',
-  },
+  // {
+  //   label: '🥇',
+  //   key: '/top/wall',
+  // },
   {
     label: '🏪',
     key: '/top/kbn',
   },
-  // {
-  //   label: '🔑',
-  //   key: '/top/admin/dashboard',
-  // },
-  // {
-  //   label: '💣',
-  //   key: '/top/combo/introduce',
-  // },
 ];
 
 export default defineComponent({

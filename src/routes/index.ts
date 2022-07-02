@@ -11,6 +11,7 @@ import top from '../layout/top.vue';
 import app from '../layout/app.vue';
 import admin from '../layout/admin.vue';
 import combo from '../layout/combo.vue';
+import tools from '../layout/tools.vue';
 
 //top 主页下的页面
 import index from '../pages/index.vue';
@@ -24,6 +25,9 @@ import admin_index from '../pages/admin/index.vue';
 //combo下的页面
 import introduce from '../pages/combo/introduce.vue';
 import combo_index from '../pages/combo/index.vue';
+//tools下的页面
+import keyboard from '../pages/tools/keyboard.vue';
+import sysinfo from '../pages/tools/sysinfo.vue';
 //app 页面
 import index_app from '../pages-app/index.vue';
 
@@ -69,6 +73,16 @@ const routes = [
       { path: 'kbn', component: kbn },
       { path: 'tsxtest', component: tsxtest },
       { path: '', component: index },
+      { path: ':pathMatch(.*)', component: errors, meta: { status: '404' } },
+    ],
+  },
+  {
+    path: '/tools',
+    component: tools,
+    children: [
+      { path: 'keyboard', component: keyboard },
+      { path: 'sysinfo', component: sysinfo },
+      { path: '', redirect: '/tools/keyboard' },
       { path: ':pathMatch(.*)', component: errors, meta: { status: '404' } },
     ],
   },
