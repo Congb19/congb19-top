@@ -1,9 +1,13 @@
 <template>
-  <div>app index</div>
-  <van-button type="primary">按钮!</van-button>
+  <!-- <div> -->
+    <!-- <Main></Main> -->
+    <router-view></router-view>
+    <!-- <TabbarIndex></TabbarIndex> -->
+  <!-- </div> -->
 </template>
 <script lang="ts" setup>
-const hello = () => {
-  console.log('hello');
-};
+import { reactive, ref } from 'vue';
+
+import TabbarIndex from '../components-app/tabbar-index.vue';
+
 </script>

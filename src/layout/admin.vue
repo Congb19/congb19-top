@@ -188,7 +188,7 @@ const tagSync = (nowKey: string) => {
   }
 };
 </script>
-<style>
+<style scoped>
 .cb-header-admin {
   display: flex;
   /* height: 60px; */

@@ -27,21 +27,8 @@
   <!-- <n-p>恋爱选我我超甜🍬</n-p> -->
 </template>
 
-<script lang="ts">
-import { ref, defineComponent } from 'vue';
-export default defineComponent({
-  name: 'HelloWorld',
-  props: {
-    msg: {
-      type: String,
-      required: false,
-    },
-  },
-  setup: () => {
-    const count = ref(0);
-    return { count };
-  },
-});
+<script lang="ts" setup>
+
 </script>
 
 <style scoped></style>

@@ -99,10 +99,5 @@ app.use(naive);
 // const combo = createCombo(C.All);
 // app.use(combo);
 
-// vant
-import { Button, ConfigProvider } from 'vant';
-app.use(Button);
-app.use(ConfigProvider);
-
 // mount!
 app.mount('#app');

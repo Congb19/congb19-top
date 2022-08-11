@@ -61,7 +61,7 @@ const menuOptions: MenuOption[] = [
   },
 ];
 </script>
-<style>
+<style scoped>
 .cb-background {
   height: 100vh;
   width: 100vw;

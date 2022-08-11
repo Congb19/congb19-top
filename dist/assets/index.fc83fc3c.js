@@ -1,0 +1,1 @@
+import{_ as t,a as n,c as o,w as c,o as a,b as s}from"./index.8c29382c.js";const r={},_=s("admin index");function d(i,x){const e=n("n-card");return a(),o(e,{style:{height:"2000px"}},{default:c(()=>[_]),_:1})}const p=t(r,[["render",d]]);export{p as default};

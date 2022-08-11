@@ -88,7 +88,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @font-face {
   font-style: normal;
   font-family: 'MiSans';
