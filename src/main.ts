@@ -91,6 +91,9 @@ const naive = create({
   ],
 });
 app.use(naive);
+// // naive-ui 全局
+// import naive from 'naive-ui';
+// app.use(naive);
 
 // combo-ui
 // import { create as createCombo, C } from '../../combo-ui/src/combo-ui';
