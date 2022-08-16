@@ -12,6 +12,11 @@ export default defineConfig({
   //     fileName: (format) => `combo.${format}.js`
   //   },
   // },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  },
   plugins: [
     vue(),
     vueJsx({

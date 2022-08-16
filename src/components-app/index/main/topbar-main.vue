@@ -6,10 +6,12 @@
     <div class="cbapp-topbar--main__main">
       <div
         v-for="item in options"
-        @click="() => optionChange(item.id)"
+        @click="() => optionChange(item.ID)"
         class="cbapp-topbar--main__main__item"
       >
-        {{ item.name }}
+        <span :class="item.ID == active ? '__selected' : '__unselected'" :style="item.ID == active ? '' : style_unselected">{{
+          item.Title
+        }}</span>
       </div>
     </div>
 
@@ -31,6 +33,13 @@ const style = computed(() => {
   const p = props.transparency!;
   return {
     backgroundColor: `rgba(255, 255, 255, ${p})`,
+    color: `rgb(${255 - 255 * p}, ${255 - 255 * p}, ${255 - 255 * p})`,
+  };
+});
+const style_unselected = computed(() => {
+  const p = props.transparency!;
+  return {
+    opacity: 0.5,
     color: `rgb(${255 - 255 * p}, ${255 - 255 * p}, ${255 - 255 * p})`,
   };
 });
@@ -100,5 +109,37 @@ const rightClicked = () => {
 
 .cbapp-topbar--main__main::-webkit-scrollbar {
   display: none;
+}
+.__selected {
+  animation: select 0.5s;
+  -webkit-animation: select 0.5s;
+  font-size: 18px;
+  opacity: 1;
+}
+.__unselected {
+  animation: unselect 0.5s;
+  -webkit-animation: unselect 0.5s;
+  font-size: 14px;
+  opacity: 0.5;
+}
+@keyframes select {
+  from {
+    font-size: 14px;
+  opacity: 0.5;
+  }
+  to {
+    font-size: 18px;
+  opacity: 1;
+  }
+}
+@keyframes unselect {
+  from {
+    font-size: 18px;
+  opacity: 1;
+  }
+  to {
+    font-size: 14px;
+  opacity: 0.5;
+  }
 }
 </style>
