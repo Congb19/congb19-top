@@ -121,6 +121,7 @@ onMounted(async () => {
 // }
 .cbapp-main__club{
   background-color: #F6F6F6;
+  margin-bottom: 50px;
 }
 .cbapp-main__tools {
   width: 100vw;

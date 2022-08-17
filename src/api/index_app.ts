@@ -8,7 +8,7 @@ import axios, { AxiosResponse } from 'axios';
 
 const config = {
   baseURL: import.meta.env.DEV
-    ? 'http://localhost:8080/api'
+    ? 'http://localhost:8003/api'
     : 'http://api.congb19.com:8003/api',
 };
 const request = axios.create(config);

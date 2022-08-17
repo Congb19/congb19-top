@@ -23,4 +23,7 @@ import { ref } from 'vue';
   box-sizing: border-box;
   background-color: #FFFFFF;
 }
+.cb-layout--app::-webkit-scrollbar {
+  display: none;
+}
 </style>

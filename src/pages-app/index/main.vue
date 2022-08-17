@@ -1,6 +1,6 @@
 <template>
-  <n-spin :show="loading">
-    <div class="cbapp-main" ref="main" @scroll="updateTransparency">
+  <div class="cbapp-main" ref="main" @scroll="updateTransparency">
+    <n-spin :show="loading">
       <TopbarMain
         :active="activeClub"
         :options="clubs"
@@ -16,8 +16,8 @@
           @refreshOk="refreshOk"
         ></ClubMain>
       </div>
-    </div>
-  </n-spin>
+    </n-spin>
+  </div>
 </template>
 <script setup lang="ts">
 import { computed, onMounted, reactive, ref } from 'vue';
@@ -69,11 +69,11 @@ onMounted(async () => {
 </script>
 <style scoped lang="scss">
 .cbapp-main::-webkit-scrollbar {
-  width: 0px;
+  display: none;
 }
 .cbapp-main {
   width: 100vw;
-  height: calc(100vh - 0px);
+  height: 100vh;
   padding: 0;
   margin: 0;
   overflow: scroll;
