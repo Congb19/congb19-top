@@ -21,6 +21,6 @@ import { ref } from 'vue';
   top: 0;
   left: 0;
   box-sizing: border-box;
-  background-color: #F6F6F6;
+  background-color: #FFFFFF;
 }
 </style>

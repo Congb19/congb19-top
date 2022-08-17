@@ -13,6 +13,6 @@ console.log(props.item);
 .cbapp-tabbar__item {
   height: 50px;
   width: 100%;
-  background-color: brown;
+  background-color: #F8F8F8;
 }
 </style>

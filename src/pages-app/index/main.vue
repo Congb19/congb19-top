@@ -13,7 +13,7 @@
         <ClubMain
           v-if="item.ID == activeClub"
           :info="item"
-          @refresh="refreshOk"
+          @refreshOk="refreshOk"
         ></ClubMain>
       </div>
     </div>
@@ -73,7 +73,7 @@ onMounted(async () => {
 }
 .cbapp-main {
   width: 100vw;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 0px);
   padding: 0;
   margin: 0;
   overflow: scroll;

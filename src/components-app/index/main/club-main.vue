@@ -44,7 +44,7 @@ import * as API from '@/api/index_app';
 const props = defineProps({
   info: { type: Object as PropType<any>, required: true },
 });
-const emits = defineEmits(['refresh']);
+const emits = defineEmits(['refreshOk']);
 const id = props.info.ID;
 const style_tools = {
   background: `url(${props.info.ImgSrc})`,
@@ -85,7 +85,7 @@ onMounted(async () => {
       })
     );
   Promise.all([res_tools, res_articles, res_pins]).then(() => {
-    emits('refresh');
+    emits('refreshOk');
   });
 });
 </script>
@@ -119,10 +119,12 @@ onMounted(async () => {
 // .cbapp-main__club{
 //   margin-bottom: 30px;
 // }
+.cbapp-main__club{
+  background-color: #F6F6F6;
+}
 .cbapp-main__tools {
   width: 100vw;
   height: 230px;
-  // background-color: darkblue;
   position: relative;
   .cbapp-main__pub {
     position: absolute;
@@ -179,6 +181,7 @@ onMounted(async () => {
 .cbapp-main__articles {
   position: relative;
   width: 100vw;
+  // background-color: #F6F6F6;
   &__title {
     font-size: 18px;
     line-height: 18px;

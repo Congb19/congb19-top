@@ -1,1 +1,0 @@
-import{d as o,a as t,h as a,i as _,o as s,_ as c}from"./index.e88f84c0.js";const n={class:"cb-layout--app"},p=o({setup(r){return(d,i)=>{const e=t("router-view");return s(),a("div",n,[_(e)])}}});const u=c(p,[["__scopeId","data-v-ad2e67a8"]]);export{u as default};

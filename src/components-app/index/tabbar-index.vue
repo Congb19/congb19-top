@@ -35,7 +35,7 @@ const click = (path: string) => {
   bottom: 0;
   width: 100vw;
   height: 50px;
-  background-color: #f8f8f8;
+  background-color: #F8F8F8;
   display: flex;
   :nth-child(n) {
     width: 20%;
