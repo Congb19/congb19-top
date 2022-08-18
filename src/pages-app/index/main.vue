@@ -16,6 +16,9 @@
           @refreshOk="refreshOk"
         ></ClubMain>
       </div>
+      <template #description>
+        别急，加载中
+      </template>
     </n-spin>
   </div>
 </template>
