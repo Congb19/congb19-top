@@ -1,11 +1,16 @@
 // app
 import { createApp } from 'vue';
 import App from './App.vue';
+import { createPinia } from 'pinia';
 const app = createApp(App);
 
 // router
 import router from './routes';
 app.use(router);
+
+// pinia
+const pinia = createPinia();
+app.use(pinia);
 
 // naive-ui
 import {

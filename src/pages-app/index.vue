@@ -11,9 +11,12 @@
 </template>
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
-
+import { useAppStore } from '@/store/index';
 import TabbarIndex from '@/components-app/index/tabbar-index.vue';
 import { useRouter } from 'vue-router';
+
+const appStore = useAppStore();
+console.log(appStore.count);
 
 const pages = [
   {
