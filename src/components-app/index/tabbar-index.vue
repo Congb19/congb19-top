@@ -20,7 +20,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import TabbarItem from './tabbar-item.vue';
+import TabbarItem from './tabbar-index-item.vue';
 const props = defineProps<{
   options?: any[];
 }>();

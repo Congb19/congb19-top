@@ -1,17 +1,20 @@
 <template>
   <div class="cbapp-article-main">
-    <div class="article__header"><Avatar :info="avatarInfo"></Avatar></div>
-    <div class="article__title">{{ info.Title }}</div>
-    <div class="article__summary">{{ info.Content }}</div>
-    <div class="article__imgs"></div>
+    <div class="article__header">
+      <Avatar :info="avatarInfo" @click="showProfile"></Avatar>
+    </div>
+    <div class="article__title" @click="showArticle">{{ info.Title }}</div>
+    <div class="article__summary" @click="showArticle">{{ info.Content }}</div>
+    <div class="article__imgs" @click="showPictrue"></div>
   </div>
 </template>
 <script setup lang="ts">
 import { defineProps, defineEmits, computed, PropType, reactive } from 'vue';
+import { useRouter } from 'vue-router';
 import { NIcon } from 'naive-ui';
 import { Search, List } from '@vicons/ionicons5';
-import sayu from '../../../assets/sayu.jpg'
-import klee from '../../../assets/klee.jpeg'
+import sayu from '@/assets/sayu.jpg';
+import klee from '@/assets/klee.jpeg';
 import Avatar from '@/components-app/common/avatar.vue';
 const props = defineProps({
   info: { type: Object as PropType<any>, required: true },
@@ -21,8 +24,14 @@ const avatarInfo = reactive({
   id: 1,
   name: 'Congb19',
   src: klee,
-  time: '19小时前'
+  time: '19小时前',
 });
+const router = useRouter();
+const showArticle = () => {
+  router.push('/app/article/' + props.info.ID);
+};
+const showProfile = () => {};
+const showPictrue = () => {};
 </script>
 <style lang="scss" scoped>
 .cbapp-article-main {

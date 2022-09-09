@@ -25,7 +25,7 @@ const req = async (method: 'GET' | 'POST', url: string, params?: object) => {
       break;
   }
   console.log(res);
-  return res
+  return res;
 };
 
 export const PUBLIC = {
@@ -43,6 +43,15 @@ export const PUBLIC = {
   },
   getArticles: async (id: number, count: number) => {
     let res = await req('GET', `/public/getArticles?id=${id}&count=${count}`);
+    return res.data;
+  },
+};
+export const ARTICLE = {
+  getArticleDetail: async (id: number, count: number) => {
+    let res = await req(
+      'GET',
+      `/public/getArticleDetail?id=${id}&count=${count}`
+    );
     return res.data;
   },
 };
