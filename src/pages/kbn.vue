@@ -11,7 +11,9 @@
       我有烦恼求助
     </n-button>
   </n-button-group>
-  <kbn-item v-for="item in happinessList" :info="item"></kbn-item>
+  <div v-for="item in happinessList" :key="item.floor">
+    <KbnItem :info="item" />
+  </div>
 
   <n-modal
     class="cb-modal"
@@ -41,7 +43,7 @@
           <!-- <template #prefix> 昵称 🍪 </template> -->
         </n-input>
       </n-form-item>
-      <n-form-item label="内容 ❓ " path="content">
+      <n-form-item label="内容 ❓" path="content">
         <n-input
           v-model:value="form.content"
           type="textarea"
@@ -71,14 +73,15 @@
 <script setup lang="ts">
 import { onMounted, computed, reactive } from 'vue';
 import { useMessage, FormInst } from 'naive-ui';
-import { kbnList } from '@/types/kbn';
+import { kbnInfo } from '@/types/kbn';
 import { getHappinessList, postKbn } from '@/api';
+
 import KbnItem from '@/components/kbn-item.vue';
 
 // 全局工具/数据
 const message = useMessage();
 let openDays = $ref(1);
-let happinessList: kbnList[] = reactive([]);
+let happinessList: kbnInfo[] = $ref([]);
 
 // type
 let modalType: number = $ref(1); // 1 快乐 2 烦恼
@@ -96,7 +99,10 @@ const texts = computed(() => {
       modalType == 1
         ? '如果你不愿意展示出来被人骚扰，可以不写'
         : '如果我能帮到你，我会来找你的！',
-    shareSuccess: ''
+    shareSuccess:
+      modalType == 1
+        ? '分享成功！我审核通过后就会展示出来啦。'
+        : '分享成功！我会找个时间来联系你的。',
   };
 });
 
@@ -142,7 +148,7 @@ const handleShare = async () => {
       };
       // let res = await postInfo(params);
       //弹一个成功失败的info，成功则关闭modal，失败不关闭
-      // message.success('分享成功！我审核通过后就会展示出来啦。如果是烦恼，我会来联系你的', {
+      // message.success('分享成功！我审核通过后就会展示出来啦。如果是烦恼，我会来联系你的。', {
       //   duration: 6000,
       // });
       // showModal = false;
@@ -173,7 +179,7 @@ onMounted(async () => {
   //获取
   let res = await getHappinessList();
   console.log(res);
-  if (res.code == 200) happinessList = [...res];
+  happinessList.push(...res);
 });
 </script>
 

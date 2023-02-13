@@ -1,5 +1,4 @@
 import req from './request';
-import { kbnList } from '@/types/kbn';
 
 const apiList = {
   auth: {
@@ -12,11 +11,12 @@ const apiList = {
 };
 
 export const getHappinessList = async () => {
-  // let res = await req('GET', apiList.kbn.getHappinessList, {});
+  let res: any;
+  // res = await req('GET', apiList.kbn.getHappinessList, { });
   let test: Promise<any> = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({
-        title: 'getHappinessList',
+        status: 1,
         code: 200,
         data: [
           {
@@ -37,7 +37,7 @@ export const getHappinessList = async () => {
       });
     }, 1000);
   });
-  let res = await test;
+  res = await test;
   return res.data;
 };
 export const postKbn = async (params: object) => {

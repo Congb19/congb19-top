@@ -1,18 +1,13 @@
 <template>
-  <!-- <div>123</div>
-  <div>{{ info }}</div> -->
-  <div></div>
+  <div>{{ info?.content }}</div>
 </template>
-<script lang="ts">
-import { ref, defineComponent, onMounted } from 'vue';
-export default defineComponent({
-  props: {
-    info: {
-      type: Object,
-    },
-  },
-  setup: () => {
-    console.log('kbn-item');
-  },
-});
+
+<script setup lang="ts">
+import { kbnInfo } from '@/types/kbn';
+
+defineProps<{
+  info?: kbnInfo
+}>()
+
+console.log("kbn-item")
 </script>

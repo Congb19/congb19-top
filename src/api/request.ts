@@ -1,10 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 
-interface Response {
-  status: number;
-  data: object;
-  message: string;
-}
+import { snakeCase, camelCase } from 'lodash';
 
 const config = {
   baseURL: import.meta.env.DEV
@@ -14,8 +10,7 @@ const config = {
 const request = axios.create(config);
 
 const req = async (method: 'GET' | 'POST', url: string, params: object) => {
-  // let res: AxiosResponse<any>;
-  let res: Response;
+  let res: AxiosResponse<any>;
   switch (method) {
     case 'GET':
       res = await request.get(url);
@@ -24,11 +19,20 @@ const req = async (method: 'GET' | 'POST', url: string, params: object) => {
       res = await request.post(url, params);
       break;
   }
-  return res;
-  return {
-    status: res.status,
-    data: res.data,
-  };
+  return transform(res);
+};
+
+const transform = (res: any) => {
+  let result: any = {};
+  if (Object.prototype.toString.call(res) !== '[object Object]') return res;
+  Object.keys(res).forEach((key: string) => {
+    if (Object.prototype.toString.call(res[key]) === '[object Object]') {
+      res[key] = transform(res[key]);
+    } else if (Object.prototype.toString.call(res[key]) === '[object Array]') {
+      res[key] = res[key].map((item: any) => transform(item));
+    } else result[camelCase(key)] = res[key];
+  });
+  return result;
 };
 
 export default req;
