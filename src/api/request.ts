@@ -7,7 +7,9 @@ interface Response {
 }
 
 const config = {
-  baseURL: import.meta.env.DEV ? '' : 'http://www.congb19.com/api',
+  baseURL: import.meta.env.DEV
+    ? 'http://localhost:8003/api'
+    : 'http://www.congb19.com/api',
 };
 const request = axios.create(config);
 
@@ -22,6 +24,7 @@ const req = async (method: 'GET' | 'POST', url: string, params: object) => {
       res = await request.post(url, params);
       break;
   }
+  return res;
   return {
     status: res.status,
     data: res.data,

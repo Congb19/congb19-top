@@ -50,7 +50,9 @@ import {
   NCollapseItem,
   NResult,
   NTag,
-  NIcon
+  NIcon,
+  NForm,
+  NFormItem
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -92,7 +94,9 @@ const naive = create({
     NCollapseItem,
     NResult,
     NTag,
-    // NIcon
+    // NIcon,
+    NForm,
+    NFormItem
   ],
 });
 app.use(naive);
