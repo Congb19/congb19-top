@@ -21,6 +21,7 @@
     "prettier": "^2.5.1",
     "sass": "^1.45.0",
     "vfonts": "^0.1.0",
+    "vscode-languageserver-textdocument": "^1.0.8",
     "vue": "^3.2.26",
     "vue-router": "^4.0.12"
   },
