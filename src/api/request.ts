@@ -6,6 +6,7 @@ const config = {
   baseURL: import.meta.env.DEV
     ? 'http://localhost:8003/api'
     : 'http://api.congb19.com:8003/api',
+    // baseURL: 'https://congb19.com/api'
 };
 const request = axios.create(config);
 
