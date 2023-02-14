@@ -9,7 +9,17 @@ const config = {
 };
 const request = axios.create(config);
 
-const req = async (method: 'GET' | 'POST', url: string, params: object) => {
+request.interceptors.response.use(
+  (response) => {
+    // 对响应的数据要做的
+    return transform(response);
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+const req = async (method: 'GET' | 'POST', url: string, params?: object) => {
   let res: AxiosResponse<any>;
   switch (method) {
     case 'GET':
@@ -19,20 +29,21 @@ const req = async (method: 'GET' | 'POST', url: string, params: object) => {
       res = await request.post(url, params);
       break;
   }
-  return transform(res);
+  return res
 };
 
 const transform = (res: any) => {
-  let result: any = {};
   if (Object.prototype.toString.call(res) !== '[object Object]') return res;
+  let result: any = {};
   Object.keys(res).forEach((key: string) => {
+    let newKey = camelCase(key)
     if (Object.prototype.toString.call(res[key]) === '[object Object]') {
-      res[key] = transform(res[key]);
+      result[newKey] = transform(res[key]);
     } else if (Object.prototype.toString.call(res[key]) === '[object Array]') {
-      res[key] = res[key].map((item: any) => transform(item));
-    } else result[camelCase(key)] = res[key];
+      result[newKey] = res[key].map((item: any) => transform(item));
+    } else result[newKey] = res[key];
   });
-  return result;
+  return result as AxiosResponse<any>;
 };
 
 export default req;

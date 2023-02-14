@@ -1,6 +1,7 @@
 <template>
-  <n-card class="cb-kbn__opendays">已营业 {{ openDays }} 天</n-card>
+  <!-- <n-card class="cb-kbn__opendays">已营业 {{ openDays }} 天</n-card> -->
   <n-h1>Congb19 的解忧杂货铺 </n-h1>
+  <n-h3>——已营业 {{ openDays }} 天</n-h3>
   <n-button-group size="large">
     <n-button type="success" round @click="handleShow(1)">
       <template #icon> 🛫 </template>
@@ -11,7 +12,8 @@
       我有烦恼求助
     </n-button>
   </n-button-group>
-  <div v-for="item in happinessList" :key="item.floor">
+
+  <div v-for="item in happinessList" :key="item.id">
     <KbnItem :info="item" />
   </div>
 
@@ -40,7 +42,6 @@
           v-model:value="form.authorName"
           :placeholder="texts.authorName"
         >
-          <!-- <template #prefix> 昵称 🍪 </template> -->
         </n-input>
       </n-form-item>
       <n-form-item label="内容 ❓" path="content">
@@ -49,7 +50,6 @@
           type="textarea"
           :placeholder="texts.content"
         >
-          <!-- <template #prefix>内容</template> -->
         </n-input>
       </n-form-item>
       <n-form-item label="联系方式 📧" path="contactInfo">
@@ -57,7 +57,6 @@
           v-model:value="form.contactInfo"
           :placeholder="texts.contactInfo"
         >
-          <!-- <template #prefix> 联系方式 📧 </template> -->
         </n-input>
       </n-form-item>
     </n-form>
@@ -95,14 +94,13 @@ const texts = computed(() => {
       modalType == 1
         ? '今天喝了奥奥椰椰咖啡，特别好喝'
         : '约人看电影，结果被 🕊 了',
-    contactInfo:
-      modalType == 1
-        ? '如果你不愿意展示出来被人骚扰，可以不写'
-        : '如果我能帮到你，我会来找你的！',
+    contactInfo: modalType == 1 ? '可以不写' : '如果我能帮到你，我会来找你的！',
     shareSuccess:
       modalType == 1
         ? '分享成功！我审核通过后就会展示出来啦。'
         : '分享成功！我会找个时间来联系你的。',
+    shareFailed: '抱歉，服务器好像出了点问题',
+    incomplete: '请填写完整',
   };
 });
 
@@ -123,41 +121,47 @@ let form = reactive({
   contactInfo: '',
   authorName: '',
 });
-let rules = {
-  authorName: {
-    required: true,
-    message: '请输入昵称',
-    trigger: 'blur',
-  },
-  content: {
-    required: true,
-    message: '请输入内容',
-    trigger: ['input', 'blur'],
-  },
-  contactInfo: {},
-};
+let rules = computed(() => {
+  return {
+    authorName: {
+      required: true,
+      message: '请输入昵称',
+      trigger: ['input', 'blur'],
+    },
+    content: {
+      required: true,
+      message: '请输入内容',
+      trigger: ['input', 'blur'],
+    },
+    contactInfo: {
+      required: modalType == 2 ? true : false,
+      message: '请输入联系方式',
+      trigger: ['input', 'blur'],
+    },
+  };
+});
 const formRef = $ref<FormInst | null>(null);
 const handleShare = async () => {
-  console.log('handleShare', form);
-  formRef?.validate((errors) => {
+  formRef?.validate(async (errors) => {
     if (!errors) {
       //发送
       const params = {
         type: modalType,
         ...form,
       };
-      // let res = await postInfo(params);
-      //弹一个成功失败的info，成功则关闭modal，失败不关闭
-      // message.success('分享成功！我审核通过后就会展示出来啦。如果是烦恼，我会来联系你的。', {
-      //   duration: 6000,
-      // });
-      // showModal = false;
-      message.warning('dbq，解忧杂货铺功能还没写完，所以还分享不了QAQ', {
-        duration: 4000,
-      });
+      let res = await postKbn(params);
+      if (res.data?.code == 200) {
+        message.success(texts.value.shareSuccess, {
+          duration: 4000,
+        });
+        showModal = false;
+      } else {
+        message.error(texts.value.shareSuccess, {
+          duration: 4000,
+        });
+      }
     } else {
-      console.log(errors);
-      message.error('请填写完整');
+      message.warning(texts.value.incomplete);
     }
   });
 };
@@ -178,15 +182,16 @@ onMounted(async () => {
   welcome();
   //获取
   let res = await getHappinessList();
-  console.log(res);
-  happinessList.push(...res);
+  if (res.code == 200) {
+    happinessList.push(...res.data.sort((a, b) => b.id - a.id));
+  }
 });
 </script>
 
 <style lang="scss" scoped>
-.cb-kbn__opendays {
-  position: absolute;
-  right: 10px;
-  width: 150px;
-}
+// .cb-kbn__opendays {
+//   position: absolute;
+//   right: 10px;
+//   width: 150px;
+// }
 </style>

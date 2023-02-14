@@ -30,19 +30,19 @@ const req = async (method: 'GET' | 'POST', url: string, params?: object) => {
 
 export const PUBLIC = {
   getClubs: async () => {
-    let res = await req('GET', `/public/getClubs`);
+    let res = await req('GET', `/app/getClubs`);
     return res.data;
   },
   getTools: async (id: number) => {
-    let res = await req('GET', `/public/getTools?id=${id}`);
+    let res = await req('GET', `/app/getTools?id=${id}`);
     return res.data;
   },
   getPins: async (id: number) => {
-    let res = await req('GET', `/public/getPins?id=${id}`);
+    let res = await req('GET', `/app/getPins?id=${id}`);
     return res.data;
   },
   getArticles: async (id: number, count: number) => {
-    let res = await req('GET', `/public/getArticles?id=${id}&count=${count}`);
+    let res = await req('GET', `/app/getArticles?id=${id}&count=${count}`);
     return res.data;
   },
 };
@@ -50,7 +50,7 @@ export const ARTICLE = {
   getArticleDetail: async (id: number, count: number) => {
     let res = await req(
       'GET',
-      `/public/getArticleDetail?id=${id}&count=${count}`
+      `/app/getArticleDetail?id=${id}&count=${count}`
     );
     return res.data;
   },

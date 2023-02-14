@@ -125,7 +125,7 @@ export default defineComponent({
   height: 50px;
   line-height: 50px;
   padding: 0;
-  z-index: 9997;
+  // z-index: 9997;
   .cb-menu {
     position: absolute;
     // width: 100vw;
@@ -149,7 +149,7 @@ export default defineComponent({
   height: 50px;
   line-height: 50px;
   padding: 0;
-  z-index: 9998;
+  // z-index: 9998;
   .cb-beian {
     padding: 0;
   }
@@ -160,7 +160,7 @@ export default defineComponent({
   bottom: 10px;
   width: 90px;
   height: 90px;
-  z-index: 9999;
+  // z-index: 9999;
   border-radius: 50%;
 }
 

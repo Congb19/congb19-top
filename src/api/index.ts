@@ -1,4 +1,8 @@
+import { AxiosResponse } from 'axios';
 import req from './request';
+
+import { getList } from '@/types/global';
+import { kbnInfo } from '@/types/kbn';
 
 const apiList = {
   auth: {
@@ -11,33 +15,10 @@ const apiList = {
 };
 
 export const getHappinessList = async () => {
-  let res: any;
-  // res = await req('GET', apiList.kbn.getHappinessList, { });
-  let test: Promise<any> = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({
-        status: 1,
-        code: 200,
-        data: [
-          {
-            type: 1,
-            floor: 1,
-            content: '今天吃了饭',
-            createdTime: '20210924',
-            authorName: 'lyc',
-          },
-          {
-            type: 1,
-            floor: 2,
-            content: '今天吃饭了',
-            createdTime: '20210924',
-            authorName: 'lyc2',
-          },
-        ],
-      });
-    }, 1000);
-  });
-  res = await test;
+  let res: AxiosResponse<getList<kbnInfo>> = await req(
+    'GET',
+    apiList.kbn.getHappinessList
+  );
   return res.data;
 };
 export const postKbn = async (params: object) => {

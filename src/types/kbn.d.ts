@@ -1,6 +1,6 @@
 export interface kbnInfo {
-  floor: number,
+  id: number,
   content: string,
-  createdTime: string,
+  createdAt: string,
   authorName: string,
 }
