@@ -1,4 +1,4 @@
-import{a6 as M,a7 as S,a8 as N,a9 as z,aa as W,ab as $,d as F,ac as q,r as x,a0 as k,e as f,A as G,ad as D,ae as K,q as U,af as Q,ag as X,ah as Y,B as v,ai as J,aj as Z,h as ee,i as te,u as re,C as A,Q as B,o as ae,_ as se}from"./index.9283a24b.js";import{a as oe}from"./index.83f7d8fe.js";const ne=M("n-avatar-group"),ie=S("avatar",`
+import{a6 as M,a7 as S,a8 as N,a9 as z,aa as W,ab as $,d as F,ac as q,r as x,a0 as k,e as f,A as G,ad as D,ae as K,q as U,af as Q,ag as X,ah as Y,B as v,ai as J,aj as Z,h as ee,i as te,u as re,C as A,Q as B,o as ae,_ as se}from"./index.ce1c9435.js";import{a as oe}from"./index.83f7d8fe.js";const ne=M("n-avatar-group"),ie=S("avatar",`
  width: var(--n-merged-size);
  height: var(--n-merged-size);
  color: #FFF;

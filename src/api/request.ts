@@ -5,7 +5,7 @@ import { snakeCase, camelCase } from 'lodash';
 const config = {
   baseURL: import.meta.env.DEV
     ? 'http://localhost:8003/api'
-    : 'http://www.congb19.com/api',
+    : 'http://api.congb19.com:8003/api',
 };
 const request = axios.create(config);
 
