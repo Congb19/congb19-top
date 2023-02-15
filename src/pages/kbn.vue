@@ -180,6 +180,7 @@ const setOpenDays = () => {
 const welcome = () => {
   console.log('欢迎大家光临！已营业', openDays, '天');
 };
+
 onMounted(async () => {
   //初始化
   setOpenDays();

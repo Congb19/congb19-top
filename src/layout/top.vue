@@ -34,8 +34,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, onMounted, computed } from 'vue';
+<script lang="ts" setup>
 import { RouteLocationRaw } from 'vue-router';
 import router from '../routes';
 import { useOsTheme, darkTheme, useMessage } from 'naive-ui';
@@ -47,10 +46,9 @@ title.value = '你在烦恼什么呢';
 
 // 系统主题
 const osThemeRef = useOsTheme();
-let theme = computed(() => (osThemeRef.value === 'dark' ? darkTheme : null));
-let themeSwitch = ref(osThemeRef.value === 'dark' ? true : false);
 // 自选主题
-theme = computed(() => (themeSwitch.value ? darkTheme : null));
+let themeSwitch = $ref(osThemeRef.value === 'dark' ? true : false);
+let theme = $computed(() => (themeSwitch ? darkTheme : null));
 
 // 菜单
 const menuOptions = [
@@ -68,36 +66,23 @@ const menuOptions = [
   },
 ];
 
-export default defineComponent({
-  name: 'top',
-  components: {},
-  setup() {
-    window.$message = useMessage();
-    let active = ref(false);
-    // 菜单路由跳转
-    const handleRouteChange = (key: RouteLocationRaw) => {
-      router.push(key);
-    };
-    return {
-      menuOptions,
-      active,
-      theme,
-      themeSwitch,
-      handleRouteChange,
-    };
-  },
-});
+window.$message = useMessage();
+
+// 菜单路由跳转
+const handleRouteChange = (key: RouteLocationRaw) => {
+  router.push(key);
+};
 </script>
 
 <style lang="scss" scoped>
-@font-face {
-  font-style: normal;
-  font-family: 'MiSans';
-  src: url('../assets/MiSans-Regular.ttf') format('truetype');
-}
+// @font-face {
+//   font-style: normal;
+//   font-family: 'MiSans';
+//   src: url('../assets/MiSans-Regular.ttf') format('truetype');
+// }
 
 .cb-layout--top {
-  font-family: PingFang SC, MiSans, Helvetica Neue, Microsoft YaHei, sans-serif !important;
+  // font-family: PingFang SC, MiSans, Helvetica Neue, Microsoft YaHei, sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -126,7 +111,7 @@ export default defineComponent({
   height: 50px;
   line-height: 50px;
   padding: 0;
-  // z-index: 9997;
+  z-index: 1;
   .cb-menu {
     position: absolute;
     // width: 100vw;

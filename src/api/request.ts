@@ -9,10 +9,10 @@ import { snakeCase, camelCase } from 'lodash';
 // const { message } = createDiscreteApi(['message']);
 
 const config = {
-  // baseURL: import.meta.env.DEV
-  //   ? 'http://localhost:8003/api'
-  //   : 'http://api.congb19.com:8003/api',
-  baseURL: 'http://api.congb19.com:8003/api'
+  baseURL: import.meta.env.DEV
+    ? 'http://localhost:8003/api'
+    : 'http://api.congb19.com:8003/api',
+  // baseURL: 'http://api.congb19.com:8003/api'
 };
 const request = axios.create(config);
 
