@@ -20,5 +20,5 @@ const props = defineProps<{
 }>();
 
 const time = $(getPastTime(props.info?.createdAt as string));
-console.log(time);
+// console.log(time);
 </script>

@@ -19,6 +19,7 @@ export const getHappinessList = async () => {
     'GET',
     apiList.kbn.getHappinessList
   );
+  // 如果失败，在之前被拦截，则res没有data属性，则会返回一个undefined。
   return res.data;
 };
 export const postKbn = async (params: object) => {

@@ -52,7 +52,8 @@ import {
   NTag,
   NIcon,
   NForm,
-  NFormItem
+  NFormItem,
+  NLoadingBarProvider
 } from 'naive-ui';
 // 通用字体
 import 'vfonts/Lato.css';
@@ -73,6 +74,7 @@ const naive = create({
     NCard,
     NConfigProvider,
     NMessageProvider,
+    NLoadingBarProvider,
     NSwitch,
     NH1,
     NH2,

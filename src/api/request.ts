@@ -2,21 +2,27 @@ import axios, { AxiosResponse } from 'axios';
 
 import { snakeCase, camelCase } from 'lodash';
 
+// import {
+//   createDiscreteApi,
+//   // ConfigProviderProps,
+// } from 'naive-ui';
+// const { message } = createDiscreteApi(['message']);
+
 const config = {
-  baseURL: import.meta.env.DEV
-    ? 'http://localhost:8003/api'
-    : 'http://api.congb19.com:8003/api',
-    // baseURL: 'https://congb19.com/api'
+  // baseURL: import.meta.env.DEV
+  //   ? 'http://localhost:8003/api'
+  //   : 'http://api.congb19.com:8003/api',
+  baseURL: 'http://api.congb19.com:8003/api'
 };
 const request = axios.create(config);
 
 request.interceptors.response.use(
   (response) => {
-    // 对响应的数据要做的
     return transform(response);
   },
   (error) => {
-    return Promise.reject(error);
+    window.$message.error('网络错误');
+    return transform(error);
   }
 );
 
@@ -30,14 +36,14 @@ const req = async (method: 'GET' | 'POST', url: string, params?: object) => {
       res = await request.post(url, params);
       break;
   }
-  return res
+  return res;
 };
 
 const transform = (res: any) => {
   if (Object.prototype.toString.call(res) !== '[object Object]') return res;
   let result: any = {};
   Object.keys(res).forEach((key: string) => {
-    let newKey = camelCase(key)
+    let newKey = camelCase(key);
     if (Object.prototype.toString.call(res[key]) === '[object Object]') {
       result[newKey] = transform(res[key]);
     } else if (Object.prototype.toString.call(res[key]) === '[object Array]') {

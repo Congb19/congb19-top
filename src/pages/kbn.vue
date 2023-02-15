@@ -71,7 +71,7 @@
 
 <script setup lang="ts">
 import { onMounted, computed, reactive } from 'vue';
-import { useMessage, FormInst } from 'naive-ui';
+import { useMessage, FormInst, useLoadingBar } from 'naive-ui';
 import { kbnInfo } from '@/types/kbn';
 import { getHappinessList, postKbn } from '@/api';
 
@@ -79,6 +79,7 @@ import KbnItem from '@/components/kbn-item.vue';
 
 // 全局工具/数据
 const message = useMessage();
+const loadingBar = useLoadingBar();
 let openDays = $ref(1);
 let happinessList: kbnInfo[] = $ref([]);
 
@@ -86,7 +87,7 @@ let happinessList: kbnInfo[] = $ref([]);
 let modalType: number = $ref(1); // 1 快乐 2 烦恼
 
 // placeholder
-const texts = computed(() => {
+const texts = $computed(() => {
   return {
     title: modalType == 1 ? '分享快乐！' : '烦恼求助',
     authorName: '该怎么称呼你？我叫 Congb19',
@@ -149,19 +150,22 @@ const handleShare = async () => {
         type: modalType,
         ...form,
       };
+      loadingBar.start();
       let res = await postKbn(params);
       if (res.data?.code == 200) {
-        message.success(texts.value.shareSuccess, {
+        loadingBar.finish();
+        message.success(texts.shareSuccess, {
           duration: 4000,
         });
         showModal = false;
       } else {
-        message.error(texts.value.shareSuccess, {
+        loadingBar.error();
+        message.error(texts.shareFailed, {
           duration: 4000,
         });
       }
     } else {
-      message.warning(texts.value.incomplete);
+      message.warning(texts.incomplete);
     }
   });
 };
@@ -180,11 +184,14 @@ onMounted(async () => {
   //初始化
   setOpenDays();
   welcome();
+  loadingBar.start();
   //获取
   let res = await getHappinessList();
-  if (res.code == 200) {
+  // console.log(res);
+  if (res && res?.code == 200) {
+    loadingBar.finish();
     happinessList.push(...res.data.sort((a, b) => b.id - a.id));
-  }
+  } else loadingBar.error();
 });
 </script>
 

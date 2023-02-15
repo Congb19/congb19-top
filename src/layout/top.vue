@@ -2,33 +2,33 @@
   <div class="cb-layout--top">
     <n-config-provider :theme="theme">
       <n-message-provider>
-        <n-card class="cb-background"></n-card>
-        <n-card class="cb-head" content-style="padding: 5px;">
-          <n-menu
-            class="cb-menu"
-            @update:value="handleRouteChange"
-            mode="horizontal"
-            :options="menuOptions"
-          />
-        </n-card>
-        <n-card
-          class="cb-content"
-          :bordered="false"
-          content-style="padding-bottom: 70px;"
-        >
-          <keep-alive><router-view></router-view></keep-alive>
-        </n-card>
-        <n-card class="cb-foot" content-style="padding: 0;">
-          <n-a class="cb-beian" href="http://beian.miit.gov.cn">
-            浙ICP备2021020364号-1
-          </n-a>
-        </n-card>
-        <n-card class="cb-darkswitch">
-          <n-el tag="div">Dark</n-el>
-          <n-switch
-            v-model:value="themeSwitch"
-          />
-        </n-card>
+        <n-loading-bar-provider>
+          <n-card class="cb-background"></n-card>
+          <n-card class="cb-head" content-style="padding: 5px;">
+            <n-menu
+              class="cb-menu"
+              @update:value="handleRouteChange"
+              mode="horizontal"
+              :options="menuOptions"
+            />
+          </n-card>
+          <n-card
+            class="cb-content"
+            :bordered="false"
+            content-style="padding-bottom: 70px;"
+          >
+            <keep-alive><router-view></router-view></keep-alive>
+          </n-card>
+          <n-card class="cb-foot" content-style="padding: 0;">
+            <n-a class="cb-beian" href="http://beian.miit.gov.cn">
+              浙ICP备2021020364号-1
+            </n-a>
+          </n-card>
+          <n-card class="cb-darkswitch">
+            <n-el tag="div">Dark</n-el>
+            <n-switch v-model:value="themeSwitch" />
+          </n-card>
+        </n-loading-bar-provider>
       </n-message-provider>
     </n-config-provider>
   </div>
@@ -38,12 +38,12 @@
 import { defineComponent, ref, onMounted, computed } from 'vue';
 import { RouteLocationRaw } from 'vue-router';
 import router from '../routes';
-import { useOsTheme, darkTheme } from 'naive-ui';
-import { useTitle } from '@vueuse/core'
+import { useOsTheme, darkTheme, useMessage } from 'naive-ui';
+import { useTitle } from '@vueuse/core';
 
 // title
-const title = useTitle()
-title.value = '你在烦恼什么呢' 
+const title = useTitle();
+title.value = '你在烦恼什么呢';
 
 // 系统主题
 const osThemeRef = useOsTheme();
@@ -72,6 +72,7 @@ export default defineComponent({
   name: 'top',
   components: {},
   setup() {
+    window.$message = useMessage();
     let active = ref(false);
     // 菜单路由跳转
     const handleRouteChange = (key: RouteLocationRaw) => {

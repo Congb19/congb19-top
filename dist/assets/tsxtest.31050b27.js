@@ -1,1 +1,0 @@
-import{d as l,i as e,b as t,S as n}from"./index.ce1c9435.js";e("button",null,[t("hello")]);const a=l({setup(){return()=>e(n,null,[e("div",null,[t("1")]),e("button",null,[t("hello")])])}});export{a as default};
