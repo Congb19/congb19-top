@@ -21,6 +21,12 @@ export const getHappinessList = async () => {
   );
   // 如果失败，在之前被拦截，则res没有data属性，则会返回一个undefined。
   return res.data;
+  // res.data的内容就是go端封装的响应对象了，可能还会有msg，code等信息。
+  // {
+  //   code: 200,
+  //   msg: 'ok',
+  //   data: []
+  // }
 };
 export const postKbn = async (params: object) => {
   let res = await req('POST', apiList.kbn.postKbn, params);

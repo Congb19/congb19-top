@@ -2,18 +2,14 @@ import axios, { AxiosResponse } from 'axios';
 
 import { snakeCase, camelCase } from 'lodash';
 
-// import {
-//   createDiscreteApi,
-//   // ConfigProviderProps,
-// } from 'naive-ui';
-// const { message } = createDiscreteApi(['message']);
 
 const config = {
   baseURL: import.meta.env.DEV
     ? 'http://localhost:8003/api'
     : 'http://api.congb19.com:8003/api',
-  // baseURL: 'http://api.congb19.com:8003/api'
 };
+// config.baseURL = 'http://api.congb19.com:8003/api'
+
 const request = axios.create(config);
 
 request.interceptors.response.use(

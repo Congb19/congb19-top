@@ -4,22 +4,22 @@
   <n-h2>这里是Congb19的小站！大家要天天开心</n-h2>
   <n-divider title-placement="center">有烦恼请随时联系我：</n-divider>
   <n-li>
-    悄悄聊 🛫:
+    悄悄聊:
     <n-a target="_blank" href="http://t.me/Congb19">@Congb19</n-a>
   </n-li>
   <n-li>
-    超私人的 📧 :
+    私人 📧 :
     <n-a href="mailto:linyc@congb19.com">linyc@congb19.com</n-a>
   </n-li>
   <n-divider title-placement="center">已实现的小功能 ：</n-divider>
   <n-li>
     小工具箱 🔧：
-    <router-link to="/tools">Congb19's Toolbox</router-link>
+    <n-a href="/tools">@Toolbox</n-a>
   </n-li>
   <n-li> 暗黑模式自动适配 + 手动切换（↘） </n-li>
   <n-divider title-placement="center">我的其他站：</n-divider>
   <n-li>
-    写小作文的地方：
+    文档和博客站 📂：
     <n-a target="_blank" href="https://blog.congb19.com">@blog</n-a>
   </n-li>
   <n-divider title-placement="center">碎碎念：</n-divider>
@@ -27,8 +27,6 @@
   <!-- <n-p>恋爱选我我超甜🍬</n-p> -->
 </template>
 
-<script lang="ts" setup>
-
-</script>
+<script lang="ts" setup></script>
 
 <style scoped></style>
