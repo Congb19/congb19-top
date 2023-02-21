@@ -5,7 +5,7 @@
         <n-layout-header bordered>
           <div class="cb-header-admin">
             <n-card :bordered="false"> congb19-admin </n-card>
-            <n-card :bordered="false">
+            <n-card :bordered="false" style="text-align: right">
               <n-switch v-model:value="themeSwitch" size="medium">
                 <template #checked-icon>
                   <n-icon :component="MoonOutline" />
@@ -97,10 +97,8 @@ import {
 const path = ref('/admin');
 // 系统主题
 const osThemeRef = useOsTheme();
-let theme = computed(() => (osThemeRef.value === 'dark' ? darkTheme : null));
 let themeSwitch = ref(osThemeRef.value === 'dark' ? true : false);
-// 自选主题
-theme = computed(() => (themeSwitch.value ? darkTheme : null));
+let theme = computed(() => (themeSwitch.value ? darkTheme : null));
 
 // router
 // ------------------------------------------------------------------------------

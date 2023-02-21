@@ -59,6 +59,20 @@ const menuOptions: MenuOption[] = [
     key: '/tools/sysinfo',
     icon: renderIcon(InformationCircleOutline),
   },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: '/tools/screen',
+          },
+        },
+        { default: () => '屏幕检测工具' }
+      ),
+    key: '/tools/screen',
+    icon: renderIcon(InformationCircleOutline),
+  },
 ];
 </script>
 <style scoped>

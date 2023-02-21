@@ -98,7 +98,7 @@ const naive = create({
     NTag,
     // NIcon,
     NForm,
-    NFormItem
+    NFormItem,
   ],
 });
 app.use(naive);

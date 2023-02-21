@@ -9,7 +9,7 @@
 </template>
 <script setup lang="ts">
 import { useOnline, useBattery, useFps, useWindowSize ,useDevicePixelRatio  } from '@vueuse/core';
-import { ref, reactive, watch } from 'vue';
+import { reactive } from 'vue';
 import { NLi } from 'naive-ui';
 const online = useOnline();
 const battery = useBattery();

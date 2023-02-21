@@ -27,7 +27,8 @@ const introduce = () => import( '../pages/combo/introduce.vue');
 const combo_index = () => import( '../pages/combo/index.vue');
 //tools下的页面
 const keyboard = () => import( '../pages/tools/keyboard.vue');
-const sysinfo = () => import( '../pages/tools/sysinfo.vue');
+const sysinfo = () => import('../pages/tools/sysinfo.vue');
+const screen = () => import('../pages/tools/screen.vue')
 //app 页面
 const index_app = () => import( '../pages-app/index.vue');
 const article_app = () => import( '../pages-app/article.vue');
@@ -98,6 +99,7 @@ const routes = [
     children: [
       { path: 'keyboard', component: keyboard },
       { path: 'sysinfo', component: sysinfo },
+      { path: 'screen', component: screen },
       { path: '', redirect: '/tools/keyboard' },
       { path: ':pathMatch(.*)', component: errors, meta: { status: '404' } },
     ],
