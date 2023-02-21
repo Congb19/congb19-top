@@ -21,7 +21,11 @@ import { NMessageProvider, NLayout, NCard, NIcon } from 'naive-ui';
 import type { MenuOption } from 'naive-ui';
 import { RouterLink, useRouter } from 'vue-router';
 import { useTitle } from '@vueuse/core';
-import { KeypadSharp, InformationCircleOutline } from '@vicons/ionicons5';
+import {
+  KeypadOutline,
+  InformationCircleOutline,
+  ColorFilterOutline,
+} from '@vicons/ionicons5';
 function renderIcon(icon: Component) {
   return () => h(NIcon, null, { default: () => h(icon) });
 }
@@ -43,21 +47,7 @@ const menuOptions: MenuOption[] = [
         { default: () => '键盘检测工具' }
       ),
     key: '/tools/keyboard',
-    icon: renderIcon(KeypadSharp),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            path: '/tools/sysinfo',
-          },
-        },
-        { default: () => '系统基本信息' }
-      ),
-    key: '/tools/sysinfo',
-    icon: renderIcon(InformationCircleOutline),
+    icon: renderIcon(KeypadOutline),
   },
   {
     label: () =>
@@ -71,6 +61,20 @@ const menuOptions: MenuOption[] = [
         { default: () => '屏幕检测工具' }
       ),
     key: '/tools/screen',
+    icon: renderIcon(ColorFilterOutline),
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            path: '/tools/sysinfo',
+          },
+        },
+        { default: () => '系统基本信息' }
+      ),
+    key: '/tools/sysinfo',
     icon: renderIcon(InformationCircleOutline),
   },
 ];
