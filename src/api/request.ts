@@ -6,7 +6,7 @@ import { snakeCase, camelCase } from 'lodash';
 const config = {
   baseURL: import.meta.env.DEV
     ? 'http://localhost:8003/api'
-    : 'http://api.congb19.com:8003/api',
+    : 'https://api.congb19.com:8003/api',
 };
 // config.baseURL = 'http://api.congb19.com:8003/api'
 
