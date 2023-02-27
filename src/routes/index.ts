@@ -18,7 +18,7 @@ const index = () => import( '../pages/index.vue');
 const wall = () => import( '../pages/wall.vue');
 const kbn = () => import( '../pages/kbn.vue');
 const errors = () => import( '../pages/errors.vue');
-const tsxtest = () => import( '../pages/tsxtest');
+// const tsxtest = () => import( '../pages/tsxtest');
 //admin下的页面
 const dashboard = () => import( '../pages/admin/dashboard.vue');
 const admin_index = () => import( '../pages/admin/index.vue');
@@ -88,7 +88,7 @@ const routes = [
     children: [
       { path: 'wall', component: wall },
       { path: 'kbn', component: kbn },
-      { path: 'tsxtest', component: tsxtest },
+      // { path: 'tsxtest', component: tsxtest },
       { path: '', component: index },
       { path: ':pathMatch(.*)', component: errors, meta: { status: '404' } },
     ],
