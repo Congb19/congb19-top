@@ -5,7 +5,7 @@ type Position = {
   y: number;
 };
 
-export function useMousePosition() {
+export function useMouse() {
   const x = ref(0);
   const y = ref(0);
 

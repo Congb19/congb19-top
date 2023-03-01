@@ -19,6 +19,7 @@ const wall = () => import( '../pages/wall.vue');
 const kbn = () => import( '../pages/kbn.vue');
 const errors = () => import( '../pages/errors.vue');
 // const tsxtest = () => import( '../pages/tsxtest');
+const blog = () => import( '../pages/blog.vue');
 //admin下的页面
 const dashboard = () => import( '../pages/admin/dashboard.vue');
 const admin_index = () => import( '../pages/admin/index.vue');
@@ -89,6 +90,7 @@ const routes = [
       { path: 'wall', component: wall },
       { path: 'kbn', component: kbn },
       // { path: 'tsxtest', component: tsxtest },
+      { path: 'blog', component: blog },
       { path: '', component: index },
       { path: ':pathMatch(.*)', component: errors, meta: { status: '404' } },
     ],

@@ -15,6 +15,7 @@
     "@vicons/ionicons5": "^0.12.0",
     "@vueuse/core": "^8.4.2",
     "axios": "^0.24.0",
+    "highlight.js": "^11.7.0",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.21",
     "naive-ui": "^2.34.3",
@@ -22,6 +23,7 @@
     "prettier": "^2.5.1",
     "sass": "^1.45.0",
     "vfonts": "^0.1.0",
+    "vite-plugin-markdown": "^2.1.0",
     "vscode-languageserver-textdocument": "^1.0.8",
     "vue": "^3.2.26",
     "vue-router": "^4.0.12"
