@@ -13,10 +13,14 @@
   </n-li>
   <n-divider title-placement="center">已实现的小功能 ：</n-divider>
   <n-li>
-    小工具箱 🔧：
-    <n-a href="/tools">@Toolbox</n-a>
+    解忧杂货铺 🏪：
+    <n-a href="/top/kbn">@解忧杂货铺</n-a>
   </n-li>
-  <n-li> 暗黑模式自动适配 + 手动切换（↘） </n-li>
+  <n-li>
+    小工具箱 🔧：
+    <n-a target="_blank" href="/tools">@Toolbox</n-a>
+  </n-li>
+  <n-li> 暗黑模式跟随系统 + 手动切换（↘） </n-li>
   <n-divider title-placement="center">我的其他站：</n-divider>
   <n-li>
     文档和博客站 📂：
