@@ -108,12 +108,15 @@ app.use(naive);
 // import naive from 'naive-ui';
 // app.use(naive);
 
+
+
 // combo-ui
-// import { create as createCombo, C } from '../../combo-ui/src/combo-ui';
-// import { create as createCombo, C } from '../dist/combo.es.js';
-// import './combo-ui/index.css';
-// const combo = createCombo(C.All);
-// app.use(combo);
+import { create as createCombo, C } from '@congb19/combo-ui';
+import '@congb19/combo-ui/dist/combo-ui/es/style.css';
+
+const combo = createCombo(C.All);
+console.log(combo)
+app.use(combo);
 
 // mount!
 app.mount('#app');

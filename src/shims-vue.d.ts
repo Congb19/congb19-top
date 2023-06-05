@@ -15,3 +15,7 @@ declare module '*.md' {
 declare interface Window {
   $message: any
 }
+declare module '@congb19/combo-ui' {
+  const create: any
+  const C: any
+}

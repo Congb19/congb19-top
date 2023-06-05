@@ -2,6 +2,8 @@
   <img alt="logo" width="200" src="../assets/sayu.jpg" />
   <n-h1>你在烦恼什么呢</n-h1>
   <n-h2>这里是Congb19的小站！大家要天天开心</n-h2>
+
+  <c-button type="success" clean>🐟 电子木鱼</c-button>
   <n-divider title-placement="center">我的其他站</n-divider>
   <n-li>
     Combo UI ⚙：
@@ -36,6 +38,8 @@
   <n-li> 暗黑模式（↘） </n-li>
   <n-divider title-placement="center">碎碎念</n-divider>
   <n-p>这个网站不知道写点什么了😭，走过路过，来点 IDEA 吧~~</n-p>
+
+  
   <!-- <n-p>恋爱选我我超甜🍬</n-p> -->
 </template>
 
