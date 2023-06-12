@@ -111,11 +111,11 @@ app.use(naive);
 
 
 // combo-ui
-import { create as createCombo, C } from '@congb19/combo-ui';
+import { create as createCombo, C} from '@congb19/combo-ui';
 import '@congb19/combo-ui/dist/combo-ui/es/style.css';
 
 const combo = createCombo(C.All);
-console.log(combo)
+console.log(combo, C.All)
 app.use(combo);
 
 // mount!

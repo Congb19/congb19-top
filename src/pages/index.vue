@@ -43,6 +43,8 @@
   <!-- <n-p>恋爱选我我超甜🍬</n-p> -->
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { CSwitch, CButton } from '@congb19/combo-ui/dist/combo-ui/es/src/index.mjs'
+</script>
 
 <style scoped></style>
