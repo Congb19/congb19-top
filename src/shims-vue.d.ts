@@ -19,3 +19,8 @@ declare module '@congb19/combo-ui' {
   const create: any
   const C: any
 }
+declare module '@congb19/combo-ui/dist/combo-ui/es/src/index.mjs' {
+  const CMessageProvider: any
+  const useMsg: any
+  const CButton: any
+}

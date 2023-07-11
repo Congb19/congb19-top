@@ -1,0 +1,1 @@
+import{d as e,_ as t,a,o as n,c as s,w as c,b as r}from"./index.9f28016d.js";const d=e({}),_=r("dashboard");function p(f,i,l,m,u,h){const o=a("n-card");return n(),s(o,null,{default:c(()=>[_]),_:1})}const $=t(d,[["render",p]]);export{$ as default};

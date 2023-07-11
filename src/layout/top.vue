@@ -1,36 +1,38 @@
 <template>
   <div class="cb-layout--top">
-    <n-config-provider :theme="theme">
-      <n-message-provider>
-        <n-loading-bar-provider>
-          <n-card class="cb-background"></n-card>
-          <n-card class="cb-head" content-style="padding: 5px;">
-            <n-menu
-              class="cb-menu"
-              @update:value="handleRouteChange"
-              mode="horizontal"
-              :options="menuOptions"
-            />
-          </n-card>
-          <n-card
-            class="cb-content"
-            :bordered="false"
-            content-style="padding-bottom: 70px;"
-          >
-            <keep-alive><router-view></router-view></keep-alive>
-          </n-card>
-          <n-card class="cb-foot" content-style="padding: 0;">
-            <n-a class="cb-beian" href="http://beian.miit.gov.cn">
-              浙ICP备2021020364号-1
-            </n-a>
-          </n-card>
-          <n-card class="cb-darkswitch">
-            <n-el tag="div">Dark</n-el>
-            <n-switch v-model:value="themeSwitch" />
-          </n-card>
-        </n-loading-bar-provider>
-      </n-message-provider>
-    </n-config-provider>
+    <c-message-provider>
+      <n-config-provider :theme="theme">
+        <n-message-provider>
+          <n-loading-bar-provider>
+            <n-card class="cb-background"></n-card>
+            <n-card class="cb-head" content-style="padding: 5px;">
+              <n-menu
+                class="cb-menu"
+                @update:value="handleRouteChange"
+                mode="horizontal"
+                :options="menuOptions"
+              />
+            </n-card>
+            <n-card
+              class="cb-content"
+              :bordered="false"
+              content-style="padding-bottom: 70px;"
+            >
+              <keep-alive><router-view></router-view></keep-alive>
+            </n-card>
+            <n-card class="cb-foot" content-style="padding: 0;">
+              <n-a class="cb-beian" href="http://beian.miit.gov.cn">
+                浙ICP备2021020364号-1
+              </n-a>
+            </n-card>
+            <n-card class="cb-darkswitch">
+              <n-el tag="div">Dark</n-el>
+              <n-switch v-model:value="themeSwitch" />
+            </n-card>
+          </n-loading-bar-provider>
+        </n-message-provider>
+      </n-config-provider>
+    </c-message-provider>
   </div>
 </template>
 
@@ -39,6 +41,7 @@ import { RouteLocationRaw } from 'vue-router';
 import router from '../routes';
 import { useOsTheme, darkTheme, useMessage } from 'naive-ui';
 import { useTitle } from '@vueuse/core';
+import { CMessageProvider } from '@congb19/combo-ui/dist/combo-ui/es/src/index.mjs';
 
 // title
 const title = useTitle();
