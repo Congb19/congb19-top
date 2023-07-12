@@ -1,1 +1,0 @@
-import{d as o,r as t,a as n,o as a,c as s,w as c,b as r}from"./index.9f28016d.js";const _=r("admin login"),m=o({setup(d){return t("123"),(p,l)=>{const e=n("n-card");return a(),s(e,null,{default:c(()=>[_]),_:1})}}});export{m as default};
